@@ -55,17 +55,18 @@
             // 
             // Weight
             // 
-            this.Weight.Location = new System.Drawing.Point(242, 53);
+            this.Weight.Location = new System.Drawing.Point(242, 38);
             this.Weight.MaxLength = 1000;
             this.Weight.Name = "Weight";
             this.Weight.PlaceholderText = "Введите вес...";
             this.Weight.Size = new System.Drawing.Size(125, 27);
             this.Weight.TabIndex = 0;
+            this.Weight.TextChanged += new System.EventHandler(this.Weight_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(54, 56);
+            this.label1.Location = new System.Drawing.Point(54, 41);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(95, 20);
             this.label1.TabIndex = 1;
@@ -75,7 +76,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(54, 87);
+            this.label2.Location = new System.Drawing.Point(54, 72);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(108, 20);
             this.label2.TabIndex = 3;
@@ -85,7 +86,7 @@
             // Height
             // 
             this.Height.BackColor = System.Drawing.SystemColors.Window;
-            this.Height.Location = new System.Drawing.Point(242, 85);
+            this.Height.Location = new System.Drawing.Point(242, 70);
             this.Height.MaxLength = 1000;
             this.Height.Name = "Height";
             this.Height.PlaceholderText = "Введите рост...";
@@ -96,7 +97,7 @@
             // radioFemale
             // 
             this.radioFemale.AutoSize = true;
-            this.radioFemale.Location = new System.Drawing.Point(3, 5);
+            this.radioFemale.Location = new System.Drawing.Point(6, 18);
             this.radioFemale.Name = "radioFemale";
             this.radioFemale.Size = new System.Drawing.Size(92, 24);
             this.radioFemale.TabIndex = 4;
@@ -107,7 +108,7 @@
             // radioMale
             // 
             this.radioMale.AutoSize = true;
-            this.radioMale.Location = new System.Drawing.Point(104, 5);
+            this.radioMale.Location = new System.Drawing.Point(104, 18);
             this.radioMale.Name = "radioMale";
             this.radioMale.Size = new System.Drawing.Size(93, 24);
             this.radioMale.TabIndex = 5;
@@ -118,7 +119,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(54, 117);
+            this.label3.Location = new System.Drawing.Point(54, 118);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(143, 20);
             this.label3.TabIndex = 6;
@@ -127,7 +128,7 @@
             // 
             // trackBarAge
             // 
-            this.trackBarAge.Location = new System.Drawing.Point(232, 149);
+            this.trackBarAge.Location = new System.Drawing.Point(232, 161);
             this.trackBarAge.Maximum = 150;
             this.trackBarAge.Minimum = 1;
             this.trackBarAge.Name = "trackBarAge";
@@ -139,7 +140,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(54, 149);
+            this.label4.Location = new System.Drawing.Point(54, 161);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(171, 20);
             this.label4.TabIndex = 8;
@@ -164,7 +165,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.DarkCyan;
-            this.label5.Location = new System.Drawing.Point(341, 228);
+            this.label5.Location = new System.Drawing.Point(345, 223);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(117, 20);
             this.label5.TabIndex = 13;
@@ -175,16 +176,16 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.OliveDrab;
-            this.label6.Location = new System.Drawing.Point(270, 311);
+            this.label6.Location = new System.Drawing.Point(281, 313);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(269, 20);
+            this.label6.Size = new System.Drawing.Size(244, 20);
             this.label6.TabIndex = 14;
-            this.label6.Text = "Желаемые вес (кг) и срок (недели):";
+            this.label6.Text = "Желаемые вес (кг) и срок (дни):";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // FutureWeight
             // 
-            this.FutureWeight.Location = new System.Drawing.Point(238, 347);
+            this.FutureWeight.Location = new System.Drawing.Point(258, 347);
             this.FutureWeight.MaxLength = 1000;
             this.FutureWeight.Name = "FutureWeight";
             this.FutureWeight.PlaceholderText = "Введите вес...";
@@ -193,7 +194,7 @@
             // 
             // FutureTime
             // 
-            this.FutureTime.Location = new System.Drawing.Point(432, 347);
+            this.FutureTime.Location = new System.Drawing.Point(419, 347);
             this.FutureTime.MaxLength = 1000;
             this.FutureTime.Name = "FutureTime";
             this.FutureTime.PlaceholderText = "Введите срок...";
@@ -237,9 +238,11 @@
             // 
             this.groupBox1.Controls.Add(this.radioFemale);
             this.groupBox1.Controls.Add(this.radioMale);
-            this.groupBox1.Location = new System.Drawing.Point(242, 116);
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.groupBox1.Location = new System.Drawing.Point(242, 100);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(271, 35);
+            this.groupBox1.Size = new System.Drawing.Size(200, 48);
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
@@ -249,18 +252,18 @@
             this.groupBox2.Controls.Add(this.radioSameWeight);
             this.groupBox2.Controls.Add(this.radioLowerWeight);
             this.groupBox2.Controls.Add(this.radioHigherWeight);
-            this.groupBox2.Location = new System.Drawing.Point(191, 253);
+            this.groupBox2.Location = new System.Drawing.Point(191, 242);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox2.Size = new System.Drawing.Size(467, 57);
+            this.groupBox2.Size = new System.Drawing.Size(427, 57);
             this.groupBox2.TabIndex = 21;
             this.groupBox2.TabStop = false;
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(281, 400);
+            this.button1.Location = new System.Drawing.Point(296, 403);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(214, 67);
