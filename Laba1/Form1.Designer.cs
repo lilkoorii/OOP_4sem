@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.Weight = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -55,6 +56,8 @@
             // 
             // Weight
             // 
+            this.Weight.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.Weight.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Weight.Location = new System.Drawing.Point(242, 38);
             this.Weight.MaxLength = 1000;
             this.Weight.Name = "Weight";
@@ -66,9 +69,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.RoyalBlue;
             this.label1.Location = new System.Drawing.Point(54, 41);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 20);
+            this.label1.Size = new System.Drawing.Size(102, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Ваш вес (кг):";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -76,9 +82,12 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.RoyalBlue;
             this.label2.Location = new System.Drawing.Point(54, 72);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 20);
+            this.label2.Size = new System.Drawing.Size(115, 20);
             this.label2.TabIndex = 3;
             this.label2.Text = "Ваш рост (см):";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -86,6 +95,7 @@
             // Height
             // 
             this.Height.BackColor = System.Drawing.SystemColors.Window;
+            this.Height.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Height.Location = new System.Drawing.Point(242, 70);
             this.Height.MaxLength = 1000;
             this.Height.Name = "Height";
@@ -97,6 +107,7 @@
             // radioFemale
             // 
             this.radioFemale.AutoSize = true;
+            this.radioFemale.ForeColor = System.Drawing.SystemColors.InfoText;
             this.radioFemale.Location = new System.Drawing.Point(6, 18);
             this.radioFemale.Name = "radioFemale";
             this.radioFemale.Size = new System.Drawing.Size(92, 24);
@@ -108,6 +119,7 @@
             // radioMale
             // 
             this.radioMale.AutoSize = true;
+            this.radioMale.ForeColor = System.Drawing.SystemColors.InfoText;
             this.radioMale.Location = new System.Drawing.Point(104, 18);
             this.radioMale.Name = "radioMale";
             this.radioMale.Size = new System.Drawing.Size(93, 24);
@@ -119,16 +131,19 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.RoyalBlue;
             this.label3.Location = new System.Drawing.Point(54, 118);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(143, 20);
+            this.label3.Size = new System.Drawing.Size(150, 20);
             this.label3.TabIndex = 6;
             this.label3.Text = "Выберите ваш пол:";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // trackBarAge
             // 
-            this.trackBarAge.Location = new System.Drawing.Point(232, 161);
+            this.trackBarAge.Location = new System.Drawing.Point(54, 193);
             this.trackBarAge.Maximum = 150;
             this.trackBarAge.Minimum = 1;
             this.trackBarAge.Name = "trackBarAge";
@@ -140,9 +155,12 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(54, 161);
+            this.label4.BackColor = System.Drawing.Color.White;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label4.Location = new System.Drawing.Point(54, 159);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(171, 20);
+            this.label4.Size = new System.Drawing.Size(179, 20);
             this.label4.TabIndex = 8;
             this.label4.Text = "Выберите ваш возраст:";
             this.label4.Click += new System.EventHandler(this.label4_Click);
@@ -151,8 +169,9 @@
             // 
             this.textBoxAge.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxAge.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxAge.ForeColor = System.Drawing.Color.RoyalBlue;
             this.textBoxAge.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.textBoxAge.Location = new System.Drawing.Point(416, 187);
+            this.textBoxAge.Location = new System.Drawing.Point(229, 225);
             this.textBoxAge.MaxLength = 150;
             this.textBoxAge.Name = "textBoxAge";
             this.textBoxAge.PlaceholderText = "Ваш возраст";
@@ -163,29 +182,33 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.DarkCyan;
-            this.label5.Location = new System.Drawing.Point(345, 223);
+            this.label5.Location = new System.Drawing.Point(54, 272);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(117, 20);
+            this.label5.Padding = new System.Windows.Forms.Padding(5);
+            this.label5.Size = new System.Drawing.Size(127, 30);
             this.label5.TabIndex = 13;
             this.label5.Text = "Цель рассчёта:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.White;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.ForeColor = System.Drawing.Color.OliveDrab;
-            this.label6.Location = new System.Drawing.Point(281, 313);
+            this.label6.ForeColor = System.Drawing.Color.Magenta;
+            this.label6.Location = new System.Drawing.Point(54, 332);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(244, 20);
+            this.label6.Padding = new System.Windows.Forms.Padding(5);
+            this.label6.Size = new System.Drawing.Size(254, 30);
             this.label6.TabIndex = 14;
             this.label6.Text = "Желаемые вес (кг) и срок (дни):";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // FutureWeight
             // 
-            this.FutureWeight.Location = new System.Drawing.Point(258, 347);
+            this.FutureWeight.Location = new System.Drawing.Point(345, 333);
             this.FutureWeight.MaxLength = 1000;
             this.FutureWeight.Name = "FutureWeight";
             this.FutureWeight.PlaceholderText = "Введите вес...";
@@ -194,7 +217,7 @@
             // 
             // FutureTime
             // 
-            this.FutureTime.Location = new System.Drawing.Point(419, 347);
+            this.FutureTime.Location = new System.Drawing.Point(506, 333);
             this.FutureTime.MaxLength = 1000;
             this.FutureTime.Name = "FutureTime";
             this.FutureTime.PlaceholderText = "Введите срок...";
@@ -204,7 +227,7 @@
             // radioSameWeight
             // 
             this.radioSameWeight.AutoSize = true;
-            this.radioSameWeight.Location = new System.Drawing.Point(6, 23);
+            this.radioSameWeight.Location = new System.Drawing.Point(6, 22);
             this.radioSameWeight.Name = "radioSameWeight";
             this.radioSameWeight.Size = new System.Drawing.Size(163, 24);
             this.radioSameWeight.TabIndex = 17;
@@ -215,7 +238,7 @@
             // radioLowerWeight
             // 
             this.radioLowerWeight.AutoSize = true;
-            this.radioLowerWeight.Location = new System.Drawing.Point(169, 23);
+            this.radioLowerWeight.Location = new System.Drawing.Point(169, 22);
             this.radioLowerWeight.Name = "radioLowerWeight";
             this.radioLowerWeight.Size = new System.Drawing.Size(137, 24);
             this.radioLowerWeight.TabIndex = 18;
@@ -226,7 +249,7 @@
             // radioHigherWeight
             // 
             this.radioHigherWeight.AutoSize = true;
-            this.radioHigherWeight.Location = new System.Drawing.Point(310, 23);
+            this.radioHigherWeight.Location = new System.Drawing.Point(310, 22);
             this.radioHigherWeight.Name = "radioHigherWeight";
             this.radioHigherWeight.Size = new System.Drawing.Size(111, 24);
             this.radioHigherWeight.TabIndex = 19;
@@ -236,9 +259,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.radioFemale);
             this.groupBox1.Controls.Add(this.radioMale);
-            this.groupBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.WindowText;
             this.groupBox1.Location = new System.Drawing.Point(242, 100);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(0);
             this.groupBox1.Name = "groupBox1";
@@ -249,10 +273,11 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.radioSameWeight);
             this.groupBox2.Controls.Add(this.radioLowerWeight);
             this.groupBox2.Controls.Add(this.radioHigherWeight);
-            this.groupBox2.Location = new System.Drawing.Point(191, 242);
+            this.groupBox2.Location = new System.Drawing.Point(196, 252);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -263,19 +288,24 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(296, 403);
+            this.button1.BackColor = System.Drawing.Color.Cyan;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button1.ForeColor = System.Drawing.Color.Magenta;
+            this.button1.Location = new System.Drawing.Point(54, 399);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(214, 67);
+            this.button1.Size = new System.Drawing.Size(704, 67);
             this.button1.TabIndex = 22;
             this.button1.Text = "Рассчитать калории";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(815, 557);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox2);
