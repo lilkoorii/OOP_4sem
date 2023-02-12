@@ -1,6 +1,6 @@
 ﻿namespace Laba1
 {
-    partial class Form1
+    partial class CalCalculator
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CalCalculator));
             this.Weight = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -64,7 +64,6 @@
             this.Weight.PlaceholderText = "Введите вес...";
             this.Weight.Size = new System.Drawing.Size(125, 27);
             this.Weight.TabIndex = 0;
-            this.Weight.TextChanged += new System.EventHandler(this.Weight_TextChanged);
             // 
             // label1
             // 
@@ -77,7 +76,6 @@
             this.label1.Size = new System.Drawing.Size(102, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Ваш вес (кг):";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -90,7 +88,6 @@
             this.label2.Size = new System.Drawing.Size(115, 20);
             this.label2.TabIndex = 3;
             this.label2.Text = "Ваш рост (см):";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // Height
             // 
@@ -102,7 +99,6 @@
             this.Height.PlaceholderText = "Введите рост...";
             this.Height.Size = new System.Drawing.Size(125, 27);
             this.Height.TabIndex = 2;
-            this.Height.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // radioFemale
             // 
@@ -139,7 +135,6 @@
             this.label3.Size = new System.Drawing.Size(150, 20);
             this.label3.TabIndex = 6;
             this.label3.Text = "Выберите ваш пол:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // trackBarAge
             // 
@@ -163,7 +158,6 @@
             this.label4.Size = new System.Drawing.Size(179, 20);
             this.label4.TabIndex = 8;
             this.label4.Text = "Выберите ваш возраст:";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // textBoxAge
             // 
@@ -204,7 +198,6 @@
             this.label6.Size = new System.Drawing.Size(254, 30);
             this.label6.TabIndex = 14;
             this.label6.Text = "Желаемые вес (кг) и срок (дни):";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // FutureWeight
             // 
@@ -269,7 +262,6 @@
             this.groupBox1.Size = new System.Drawing.Size(200, 48);
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // groupBox2
             // 
@@ -284,7 +276,6 @@
             this.groupBox2.Size = new System.Drawing.Size(427, 57);
             this.groupBox2.TabIndex = 21;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // button1
             // 
@@ -300,7 +291,7 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // Form1
+            // CalCalculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -322,9 +313,8 @@
             this.Controls.Add(this.Height);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Weight);
-            this.Name = "Form1";
+            this.Name = "CalCalculator";
             this.Text = "Калькулятор калорий";
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.trackBarAge)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

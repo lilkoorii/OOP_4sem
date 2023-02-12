@@ -1,72 +1,43 @@
+using Microsoft.VisualBasic.ApplicationServices;
 using System.Diagnostics.Metrics;
 using System.Runtime.CompilerServices;
 
 namespace Laba1
 {
-    public partial class Form1 : Form
+    public partial class CalCalculator : Form, ICalculator
     {
         int BMR;
         double IMT;
         double diffWeight;
         int minusCal;
         int dailyMinusCal;
-        private delegate int Calculate();
-        Calculate Calc;
+        public delegate void Calculated(string message);
+        public event Calculated Calc;
 
-        public Form1()
+        public CalCalculator()
         {
             InitializeComponent();
-        }
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
+            Calc += (message) =>
+            {
+                MessageBox.Show($"Выполнение завершено!", message);
+            };
         }
         private void trackBarAge_Scroll(object sender, EventArgs e)
         {
             textBoxAge.Text = trackBarAge.Value.ToString();
         }
-        private void label1_Click(object sender, EventArgs e)
-        {
-            
-        }
-        private void label2_Click(object sender, EventArgs e)
-        {
-           
-        }
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void Weight_TextChanged(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             if ((double.Parse(Weight.Text) < 50) || (double.Parse(Weight.Text) > 260))
             {
                 MessageBox.Show("Неправильный вес!");
-            }    
-        }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
+                Environment.Exit(1);
+            }
+            if ((double.Parse(Height.Text) < 50) || (double.Parse(Height.Text) > 260))
+            {
+                MessageBox.Show("Неправильный рост!");
+                Environment.Exit(1);
+            }
             try
             {
                 int height = Convert.ToInt32(Height.Text);
@@ -102,14 +73,13 @@ namespace Laba1
                     MessageBox.Show("Вам нужно потреблять больше чем " + BMR + " калорий в день, чтобы набрать вес.");
                     MessageBox.Show("Нужно съедать в день " + CalcFuture() + " калорий, чтобы набрать вес за указанный срок.");
                 }
-                Calc = CalcMale;
             }
             if (radioFemale.Checked)
             {
                 BMR = CalcFemale();
                 if (radioSameWeight.Checked)
                 {
-                    MessageBox.Show("Вам нужно потреблять ровно " + BMR + " калорий в день, чтобы поддержать вас.");
+                    MessageBox.Show("Вам нужно потреблять ровно " + BMR + " калорий в день, чтобы поддержать вес.");
                 }
                 if (radioLowerWeight.Checked)
                 {
@@ -121,28 +91,28 @@ namespace Laba1
                     MessageBox.Show("Вам нужно потреблять больше чем " + BMR + " калорий в день, чтобы набрать вес.");
                     MessageBox.Show("Нужно съедать в день " + CalcFuture() + " калорий, чтобы набрать вес за указанный срок.");
                 }
-                Calc = CalcFemale;
             }
+            Calc?.Invoke("Вычисления завершены");
         }
-        private int CalcMale()
+        public int CalcMale()
         {
             int res;
             res = Convert.ToInt32(88.36 + (13.4 * double.Parse(Weight.Text)) + (4.8 * double.Parse(Height.Text)) - (5.7 * trackBarAge.Value));
             return res;
         }
-        private int CalcFemale()
+        public int CalcFemale()
         {
             int res;
             res = Convert.ToInt32(447.6 + (9.2 * double.Parse(Weight.Text)) + (3.1 * double.Parse(Height.Text)) - (4.3 * trackBarAge.Value));
             return res;
         }
-        private double CalcIMT()
+        public double CalcIMT()
         {
             double res;
             res = double.Parse(Weight.Text)/(Math.Pow((double.Parse(Height.Text)/100), 2));
             return res;
         }
-        private void IMTType()
+        public void IMTType()
         {
             IMT = Math.Round(CalcIMT(), 2);
             if (IMT < 18.5) { MessageBox.Show("Ваш ИМТ: " + IMT + ". Ваш вес ниже нормального, рекомендуем набрать вес!"); }
@@ -152,7 +122,7 @@ namespace Laba1
             if ((IMT >= 35) && (IMT < 40)) { MessageBox.Show("Ваш ИМТ: " + IMT + ". У вас ожирение II степени!"); }
             if (IMT > 40) { MessageBox.Show("Ваш ИМТ: " + IMT + ". У вас ожирение III степени!"); }
         }
-        private int CalcFuture()
+        public int CalcFuture()
         {
             diffWeight = Math.Abs(double.Parse(FutureWeight.Text) - double.Parse(Weight.Text));
             minusCal = Convert.ToInt32(diffWeight * 7700);

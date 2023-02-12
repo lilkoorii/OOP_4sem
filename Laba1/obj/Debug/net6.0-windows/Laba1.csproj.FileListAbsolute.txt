@@ -4,7 +4,6 @@ C:\Users\Maria\source\repos\OOP_4sem\Laba1\bin\Debug\net6.0-windows\Laba1.runtim
 C:\Users\Maria\source\repos\OOP_4sem\Laba1\bin\Debug\net6.0-windows\Laba1.dll
 C:\Users\Maria\source\repos\OOP_4sem\Laba1\bin\Debug\net6.0-windows\Laba1.pdb
 C:\Users\Maria\source\repos\OOP_4sem\Laba1\obj\Debug\net6.0-windows\Laba1.csproj.AssemblyReference.cache
-C:\Users\Maria\source\repos\OOP_4sem\Laba1\obj\Debug\net6.0-windows\Laba1.Form1.resources
 C:\Users\Maria\source\repos\OOP_4sem\Laba1\obj\Debug\net6.0-windows\Laba1.csproj.GenerateResource.cache
 C:\Users\Maria\source\repos\OOP_4sem\Laba1\obj\Debug\net6.0-windows\Laba1.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Maria\source\repos\OOP_4sem\Laba1\obj\Debug\net6.0-windows\Laba1.AssemblyInfoInputs.cache
@@ -16,3 +15,4 @@ C:\Users\Maria\source\repos\OOP_4sem\Laba1\obj\Debug\net6.0-windows\Laba1.pdb
 C:\Users\Maria\source\repos\OOP_4sem\Laba1\obj\Debug\net6.0-windows\Laba1.genruntimeconfig.cache
 C:\Users\Maria\source\repos\OOP_4sem\Laba1\obj\Debug\net6.0-windows\ref\Laba1.dll
 C:\Users\Maria\source\repos\OOP_4sem\Laba1\obj\Debug\net6.0-windows\Laba1.Properties.Resources.resources
+C:\Users\Maria\source\repos\OOP_4sem\Laba1\obj\Debug\net6.0-windows\Laba1.CalCalculator.resources
