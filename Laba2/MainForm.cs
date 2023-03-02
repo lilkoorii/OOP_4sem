@@ -1,3 +1,5 @@
+using System;
+using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization.Json;
 using System.Windows.Forms;
 
@@ -5,11 +7,17 @@ namespace Laba2
 {
     public partial class MainForm : Form
     {
-        Library library = new Library("Библиотека имени Рекардо Милоса");
+        Library library = new Library("Библиотека!");
 
         public MainForm()
         {
             InitializeComponent();
+        }
+
+        public MainForm(Library library)
+        {
+            InitializeComponent();
+            this.library = library;
         }
 
         private void loadInFile_Click(object sender, EventArgs e)
@@ -47,7 +55,7 @@ namespace Laba2
                 foreach (BookFile book in books)
                 {
                     library.GetBookCollection().Add(book);
-                    listBox.Items.Add("Название: " + book.Name + " | " + "Автор: " + book.Author);
+                    listBox.Items.Add("Название: " + book.Name + " | " + "Автор: " + book.Author + " | " + "Год написания: " + book.Year + " | " + "Страницы: " + book.BookSize + " | " + "Издательство: " + book.Publisher);
                 }
                 listBox.Update();
 
@@ -56,23 +64,22 @@ namespace Laba2
             {
                 MessageBox.Show(exc.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-
             MessageBox.Show("Успешно загружено!", "Загрузка из файла.", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void addButton_Click(object sender, EventArgs e)
         {
             int year = 1000;
-            float fileSize = 5000;
+            float fileSize = 0.5f;
             // проверка воодимых данных
-            if (string.IsNullOrEmpty(inputNameField.Text) || string.IsNullOrEmpty(inputAuthorField.Text) ||
-                string.IsNullOrEmpty(inputYearField.Text) || string.IsNullOrEmpty(inputPublisherField.Text) ||
+            /*if (string.IsNullOrEmpty(inputNameField.Text) || string.IsNullOrEmpty(inputAuthorField.Text) ||
+                string.IsNullOrEmpty(inputYearUpDown.Text) || string.IsNullOrEmpty(inputPublisherField.Text) ||
                 string.IsNullOrEmpty(inputFileSizeField.Text))
             {
                 MessageBox.Show("Не все поля заполнены!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else if (!int.TryParse(inputYearField.Text, out year) || !float.TryParse(inputFileSizeField.Text, out fileSize))
+            }*/
+            
+            if (!int.TryParse(inputYearUpDown.Text, out year) || !float.TryParse(inputFileSizeField.Text, out fileSize))
             {
                 MessageBox.Show("Ожидалось числовое значение!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -85,30 +92,76 @@ namespace Laba2
                     format = FileFormat.EPUB;
                 if (rbFormat3.Checked)
                     format = FileFormat.TXT;
+       
 
-                BookFile book = new BookFile(inputNameField.Text, inputAuthorField.Text, int.Parse(inputYearField.Text),
-                bookSizeTrackBar.Value, inputPublisherField.Text, format, int.Parse(inputFileSizeField.Text), System.DateTime.Now);
-                library.AddBook(book);
-                listBox.Items.Add("Название: " + book.Name + " | " + "Автор: " + book.Author);
-                listBox.Update();
+                BookFile book = new BookFile(inputNameField.Text, inputAuthorField.Text, int.Parse(inputYearUpDown.Text),
+                bookSizeTrackBar.Value, inputPublisherField.Text, format, float.Parse(inputFileSizeField.Text), System.DateTime.Now);
+                var results = new List<ValidationResult>();
+                var context = new ValidationContext(book);
+                if (!Validator.TryValidateObject(book, context, results, true))
+                {
+                    foreach (var error in results)
+                    {
+                        MessageBox.Show(error.ErrorMessage);
+                    }
+                }
+                else
+                {
+                    library.AddBook(book);
+                    listBox.Items.Add("Название: " + book.Name + " | " + "Автор: " + book.Author + " | " + "Год написания: " + book.Year + " | " + "Страницы: " + book.BookSize + " | " + "Издательство: " + book.Publisher);
+                    listBox.Update();
+                }
+
             }
         }
 
         private void bookSizeTrackBar_Scroll(object sender, EventArgs e)
         {
-            bookSizeLabel.Text = "Book size (" + bookSizeTrackBar.Value.ToString() + ")";
+            bookSizeLabel.Text = "Страницы (" + bookSizeTrackBar.Value.ToString() + ")";
         }
 
         private void aboutToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Version: 0.8.3\nMarkovsky Artemy.", "About", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Версия 0.0.1\nЛощакова Мария", "О программе", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void searchToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SearchForm searchForm = new SearchForm(library);
-            searchForm.Activate();
-            searchForm.Show();
+            SearchForm search = new SearchForm(library);
+            search.Activate();
+            search.Show();
+        }
+
+        private void nameLable_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void formatBox_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ulpDatePicker_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime datefloor = Convert.ToDateTime("01/01/1900");
+            DateTime dateceiling = Convert.ToDateTime("01/01/2024");
+            if (ulpDatePicker.Value > dateceiling || ulpDatePicker.Value < datefloor)
+            {
+                MessageBox.Show("Неправильная дата!");
+            }
+        }
+
+        private void btnHideShowMenu_Click(object sender, EventArgs e)
+        {
+            if (menuStrip1.Visible)
+            {
+                menuStrip1.Visible = false;
+            }
+            else
+            {
+                menuStrip1.Visible = true;
+            }
         }
     }
 }

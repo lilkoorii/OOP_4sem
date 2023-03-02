@@ -32,7 +32,7 @@ namespace Laba2
             this.library = library;
         }
 
-        private void inputBookTitle_TextChanged(object sender, EventArgs e)
+        private void inputBookTitle_TextChanged(object sender, EventArgs e) //поиск
         {
             if (searchFormat == SearchFormat.LINQ)
             {
@@ -41,11 +41,11 @@ namespace Laba2
                 listBoxSearchResult.Items.Clear();
                 foreach (BookFile item in search)
                 {
-                    listBoxSearchResult.Items.Add("Название: " + item.Name + " | " + "Автор: " + item.Author);
+                    listBoxSearchResult.Items.Add("Название: " + item.Name + " | " + "Автор: " + item.Author + " | " + "Год написания: " + item.Year + " | " + "Страницы: " + item.BookSize + " | " + "Издательство: " + item.Publisher + " | " + "Дата загрузки: " +  item.UploadDate);
                 }
                 listBoxSearchResult.Update();
 
-                labelFound.Text = "Found: " + listBoxSearchResult.Items.Count.ToString();
+                labelFound.Text = "Найдено: " + listBoxSearchResult.Items.Count.ToString() + " Действие: поиск по названию LINQ " + " Дата: " + DateTime.Now;
             }
             else if (searchFormat == SearchFormat.REGEX)
             {
@@ -54,11 +54,61 @@ namespace Laba2
                 listBoxSearchResult.Items.Clear();
                 foreach (BookFile item in search)
                 {
-                    listBoxSearchResult.Items.Add("Название: " + item.Name + " | " + "Автор: " + item.Author);
+                    listBoxSearchResult.Items.Add("Название: " + item.Name + " | " + "Автор: " + item.Author + " | " + "Год написания: " + item.Year + " | " + "Страницы: " + item.BookSize + " | " + "Издательство: " + item.Publisher + " | " + "Дата загрузки: " + item.UploadDate);
                 }
                 listBoxSearchResult.Update();
 
-                labelFound.Text = "Found: " + listBoxSearchResult.Items.Count.ToString();
+                labelFound.Text = "Найдено: " + listBoxSearchResult.Items.Count.ToString() +" Действие: поиск по названию RegEx " + " Дата: " + DateTime.Now;
+            }
+        }
+        private void inputPublisher_TextChanged(object sender, EventArgs e)
+        {
+            if (searchFormat == SearchFormat.LINQ)
+            {
+                var search = library.GetBookCollection().Where(x => (x.Publisher == inputPublisher.Text.ToString()));
+
+                listBoxSearchResult.Items.Clear();
+                foreach (BookFile item in search)
+                {
+                    listBoxSearchResult.Items.Add("Название: " + item.Name + " | " + "Автор: " + item.Author + " | " + "Год написания: " + item.Year + " | " + "Страницы: " + item.BookSize + " | " + "Издательство: " + item.Publisher + " | " + "Дата загрузки: " + item.UploadDate);
+                }
+                listBoxSearchResult.Update();
+
+                labelFound.Text = "Найдено: " + listBoxSearchResult.Items.Count.ToString() + " Действие: поиск по издательству LINQ " + " Дата: " + DateTime.Now;
+            }
+            else if (searchFormat == SearchFormat.REGEX)
+            {
+                var search = library.GetBookCollection().Where(x => regCheck(x.Publisher, inputPublisher.Text.ToString()));
+
+                listBoxSearchResult.Items.Clear();
+                foreach (BookFile item in search)
+                {
+                    listBoxSearchResult.Items.Add("Название: " + item.Name + " | " + "Автор: " + item.Author + " | " + "Год написания: " + item.Year + " | " + "Страницы: " + item.BookSize + " | " + "Издательство: " + item.Publisher + " | " + "Дата загрузки: " + item.UploadDate);
+                }
+                listBoxSearchResult.Update();
+
+                labelFound.Text = "Найдено: " + listBoxSearchResult.Items.Count.ToString() + " Действие: поиск по издательству RegEx " + " Дата: " + DateTime.Now;
+            }
+        }
+
+        private void inputYear_TextChanged(object sender, EventArgs e)
+        {
+            if (searchFormat == SearchFormat.LINQ)
+            {
+                var search = library.GetBookCollection().Where(x => (x.Year == Int32.Parse(inputYear.Text)));
+
+                listBoxSearchResult.Items.Clear();
+                foreach (BookFile item in search)
+                {
+                    listBoxSearchResult.Items.Add("Название: " + item.Name + " | " + "Автор: " + item.Author + " | " + "Год написания: " + item.Year + " | " + "Страницы: " + item.BookSize + " | " + "Издательство: " + item.Publisher + " | " + "Дата загрузки: " + item.UploadDate);
+                }
+                listBoxSearchResult.Update();
+
+                labelFound.Text = "Найдено: " + listBoxSearchResult.Items.Count.ToString() + " Действие: поиск по году LINQ " + " Дата: " + DateTime.Now;
+            }
+            else if (searchFormat == SearchFormat.REGEX)
+            {
+                MessageBox.Show("Невозомжно проверить год издания через RegEx");
             }
         }
 
@@ -81,13 +131,14 @@ namespace Laba2
 
         private void btnYearSort_Click(object sender, EventArgs e)
         {
-            listBoxSearchResult.Items.Clear();
+            var list = 
             var sorted = library.GetBookCollection().OrderByDescending(u => u.Year);
             foreach (BookFile item in sorted)
             {
-                listBoxSearchResult.Items.Add("Название: " + item.Name + " | " + "Автор: " + item.Author);
+                listBoxSearchResult.Items.Add("Название: " + item.Name + " | " + "Автор: " + item.Author + " | " + "Год написания: " + item.Year + " | " + "Страницы: " + item.BookSize + " | " + "Издательство: " + item.Publisher + " | " + "Дата загрузки: " + item.UploadDate);
             }
             listBoxSearchResult.Update();
+            labelFound.Text = "Найдено: " + listBoxSearchResult.Items.Count.ToString() + " Действие: сортировка по году  " + " Дата: " + DateTime.Now;
         }
 
         private void btnPageSort_Click(object sender, EventArgs e)
@@ -96,9 +147,10 @@ namespace Laba2
             var sorted = library.GetBookCollection().OrderByDescending(u => u.BookSize);
             foreach (BookFile item in sorted)
             {
-                listBoxSearchResult.Items.Add("Название: " + item.Name + " | " + "Автор: " + item.Author);
+                listBoxSearchResult.Items.Add("Название: " + item.Name + " | " + "Автор: " + item.Author + " | " + "Год написания: " + item.Year + " | " + "Страницы: " + item.BookSize + " | " + "Издательство: " + item.Publisher + " | " + "Дата загрузки: " + item.UploadDate);
             }
             listBoxSearchResult.Update();
+            labelFound.Text = "Найдено: " + listBoxSearchResult.Items.Count.ToString() + " Действие: сортировка по страницам " + " Дата: " + DateTime.Now;
         }
 
         private void btnUploadSort_Click(object sender, EventArgs e)
@@ -107,9 +159,22 @@ namespace Laba2
             var sorted = library.GetBookCollection().OrderByDescending(u => u.UploadDate);
             foreach (BookFile item in sorted)
             {
-                listBoxSearchResult.Items.Add("Название: " + item.Name + " | " + "Автор: " + item.Author);
+                listBoxSearchResult.Items.Add("Название: " + item.Name + " | " + "Автор: " + item.Author + " | " + "Год написания: " + item.Year + " | " + "Страницы: " + item.BookSize + " | " + "Издательство: " + item.Publisher + " | " + "Дата загрузки: " + item.UploadDate);
             }
             listBoxSearchResult.Update();
+            labelFound.Text = "Найдено: " + listBoxSearchResult.Items.Count.ToString() + " Действие: сортировка по дате загрузки " + " Дата: " + DateTime.Now;
+        }
+
+        private void btnNameSort_Click(object sender, EventArgs e)
+        {
+            listBoxSearchResult.Items.Clear();
+            var sorted = library.GetBookCollection().OrderByDescending(u => u.Name);
+            foreach (BookFile item in sorted)
+            {
+                listBoxSearchResult.Items.Add("Название: " + item.Name + " | " + "Автор: " + item.Author + " | " + "Год написания: " + item.Year + " | " + "Страницы: " + item.BookSize + " | " + "Издательство: " + item.Publisher + " | " + "Дата загрузки: " + item.UploadDate);
+            }
+            listBoxSearchResult.Update();
+            labelFound.Text = "Найдено: " + listBoxSearchResult.Items.Count.ToString() + " Действие: сортировка по названию " + " Дата: " + DateTime.Now;
         }
 
         private void rbSearchFormat_CheckedChanged(object sender, EventArgs e)
@@ -122,6 +187,48 @@ namespace Laba2
             {
                 searchFormat = SearchFormat.REGEX;
             }
+        }
+
+        private void библиотекаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainForm main = new MainForm();
+            main.Activate();
+            main.Show();
+        }
+
+        private void поГодуToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            listBoxSearchResult.Items.Clear();
+            var sorted = library.GetBookCollection().OrderByDescending(u => u.Year);
+            foreach (BookFile item in sorted)
+            {
+                listBoxSearchResult.Items.Add("Название: " + item.Name + " | " + "Автор: " + item.Author + " | " + "Год написания: " + item.Year + " | " + "Страницы: " + item.BookSize + " | " + "Издательство: " + item.Publisher + " | " + "Дата загрузки: " + item.UploadDate);
+            }
+            listBoxSearchResult.Update();
+        }
+
+        private void поДатеЗагрузкиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            listBoxSearchResult.Items.Clear();
+            var sorted = library.GetBookCollection().OrderByDescending(u => u.UploadDate);
+            foreach (BookFile item in sorted)
+            {
+                listBoxSearchResult.Items.Add("Название: " + item.Name + " | " + "Автор: " + item.Author + " | " + "Год написания: " + item.Year + " | " + "Страницы: " + item.BookSize + " | " + "Издательство: " + item.Publisher + " | " + "Дата загрузки: " + item.UploadDate);
+            }
+            listBoxSearchResult.Update();
+
+        }
+
+        private void поНазваниюToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            listBoxSearchResult.Items.Clear();
+            var sorted = library.GetBookCollection().OrderByDescending(u => u.Name);
+            foreach (BookFile item in sorted)
+            {
+                listBoxSearchResult.Items.Add("Название: " + item.Name + " | " + "Автор: " + item.Author + " | " + "Год написания: " + item.Year + " | " + "Страницы: " + item.BookSize + " | " + "Издательство: " + item.Publisher + " | " + "Дата загрузки: " + item.UploadDate);
+            }
+            listBoxSearchResult.Update();
+
         }
     }
 }

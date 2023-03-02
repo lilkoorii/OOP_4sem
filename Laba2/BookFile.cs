@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace Laba2
 {
@@ -17,7 +18,7 @@ namespace Laba2
     [DataContract]
     public class BookFile : IComparable
     {
-        // ПОЛЯ
+        // Поля
         [DataMember]
         private string name;
         [DataMember]
@@ -35,7 +36,7 @@ namespace Laba2
         [DataMember]
         private DateTime uploadDate;
 
-        // КОНСТРУКТОРЫ --------------------------------------------------------------------------
+        // Конструкторы
 
         public BookFile(string name, string author, int year, int bookSize, string publisher, FileFormat fileFormat, float fileSize, DateTime uploadDate)
         {
@@ -49,20 +50,13 @@ namespace Laba2
             this.UploadDate = uploadDate;
         }
 
-        // СВОЙСТВА --------------------------------------------------------------------------
+        // Свойства
 
-        public string Name
-        {
-            get => name;
-            set
-            {
-                if (value.Length < 2)
-                    throw new Exception("Недопустимая длина Имени.");
-                else
-                    name = value;
-            }
-        }
+        [Required(ErrorMessage = "Введите название книжки!")] //собств аттрибут
+        [Length]
+        public string Name { get => name; set => name = value; }
 
+        [Required(ErrorMessage = "Необходимо указать автора")]
         public string Author
         {
             get => author;
@@ -75,29 +69,13 @@ namespace Laba2
             }
         }
 
-        public int Year
-        {
-            get => year;
-            set
-            {
-                if (value < 0 || value > 2019)
-                    throw new Exception("Недопустимый год создания.");
-                else
-                    year = value;
-            }
-        }
+        [Required(ErrorMessage = "Необходимо указать год")]
+        [Range(1900, 2023, ErrorMessage = "Неправильный год создания!")]
+        public int Year { get => year; set => year = value; }
 
-        public int BookSize
-        {
-            get => bookSize;
-            set
-            {
-                if (value < 1)
-                    throw new Exception("Недопустимое кол-во страниц.");
-                else
-                    bookSize = value;
-            }
-        }
+        [Required(ErrorMessage = "Обязательно ввести кол-во страниц!")]
+        [Range(1, 1000, ErrorMessage = "Неправильное кол-во страниц!")]
+        public int BookSize { get => bookSize; set => bookSize = value; }
 
         public string Publisher
         {
@@ -111,17 +89,10 @@ namespace Laba2
             }
         }
 
+        [Required(ErrorMessage = "Нужно ввести размер файла!")]
+        [RegularExpression(@"[0-9]*\.{1}[0-9]*", ErrorMessage = "Некорректный ввод размера!")]
         public float FileSize
-        {
-            get => fileSize;
-            set
-            {
-                if (value < 0.001)
-                    throw new Exception("Недопустимаый размер файла.");
-                else
-                    fileSize = value;
-            }
-        }
+        { get => fileSize; set => fileSize = value; }
 
         public DateTime UploadDate
         {
@@ -134,11 +105,27 @@ namespace Laba2
             set => fileFormat = value;
         }
 
-        // МЕТОДЫ --------------------------------------------------------------------------
+        // Мэтоды
 
         public int CompareTo(object obj)
         {
             return name.CompareTo(obj);
+        }
+
+    }
+    public class LengthAttribute : ValidationAttribute
+    {
+        public override bool IsValid(object value)
+        {
+            int name = value.ToString().Length;
+            if (value != null)
+            { 
+                if (name >= 2)
+                    return true;
+                else
+                    this.ErrorMessage = "Имя должно быть длиннее двух букв!";
+            }
+            return false;
         }
     }
 }

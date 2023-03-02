@@ -26,16 +26,16 @@ namespace Laba1
         {
             textBoxAge.Text = trackBarAge.Value.ToString();
         }
-        private void button1_Click(object sender, EventArgs e)
+        private void calculate_Click(object sender, EventArgs e)
         {
-            if ((double.Parse(Weight.Text) < 50) || (double.Parse(Weight.Text) > 260))
+            if ((double.Parse(Weight.Text) < 10) || (double.Parse(Weight.Text) > 260))
             {
-                MessageBox.Show("Неправильный вес!");
+                MessageBox.Show("Неправильный вес!", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Environment.Exit(1);
             }
-            if ((double.Parse(Height.Text) < 50) || (double.Parse(Height.Text) > 260))
+            if ((double.Parse(Height.Text) < 30) || (double.Parse(Height.Text) > 260))
             {
-                MessageBox.Show("Неправильный рост!");
+                MessageBox.Show("Неправильный рост!", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Environment.Exit(1);
             }
             try
@@ -44,7 +44,7 @@ namespace Laba1
             }
             catch (FormatException)
             {
-                MessageBox.Show("Неправильный рост!");
+                MessageBox.Show("Неправильный рост!", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Height.Text = "";
             }
             int count = groupBox2.Controls
@@ -53,7 +53,7 @@ namespace Laba1
                     .Count();
             if (count < 1)
             {
-                MessageBox.Show("Выберите вашу цель!");
+                MessageBox.Show("Выберите вашу цель!", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             IMTType();
             if (radioMale.Checked)
@@ -61,17 +61,17 @@ namespace Laba1
                 BMR = CalcMale();
                 if (radioSameWeight.Checked)
                 {
-                    MessageBox.Show("Вам нужно потреблять ровно " + BMR + " калорий в день, чтобы поддержать вес.");
+                    MessageBox.Show("Вам нужно потреблять ровно " + BMR + " калорий в день, чтобы поддержать вес.", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 if (radioLowerWeight.Checked)
                 {
-                    MessageBox.Show("Вам нужно потреблять меньше чем " + BMR + " калорий в день, чтобы похудеть.");
-                    MessageBox.Show("Нужно сжигать в день " + CalcFuture() + " калорий, чтобы похудеть за указанный срок.");
+                    MessageBox.Show("Вам нужно потреблять меньше чем " + BMR + " калорий в день, чтобы похудеть.", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Нужно сжигать в день " + CalcFuture() + " калорий, чтобы похудеть за указанный срок.", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 if (radioHigherWeight.Checked)
                 {
-                    MessageBox.Show("Вам нужно потреблять больше чем " + BMR + " калорий в день, чтобы набрать вес.");
-                    MessageBox.Show("Нужно съедать в день " + CalcFuture() + " калорий, чтобы набрать вес за указанный срок.");
+                    MessageBox.Show("Вам нужно потреблять больше чем " + BMR + " калорий в день, чтобы набрать вес.", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Нужно съедать в день " + CalcFuture() + " калорий, чтобы набрать вес за указанный срок.", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             if (radioFemale.Checked)
@@ -79,17 +79,17 @@ namespace Laba1
                 BMR = CalcFemale();
                 if (radioSameWeight.Checked)
                 {
-                    MessageBox.Show("Вам нужно потреблять ровно " + BMR + " калорий в день, чтобы поддержать вес.");
+                    MessageBox.Show("Вам нужно потреблять ровно " + BMR + " калорий в день, чтобы поддержать вес.", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 if (radioLowerWeight.Checked)
                 {
-                    MessageBox.Show("Вам нужно потреблять меньше чем " + BMR + " калорий в день, чтобы похудеть.");
-                    MessageBox.Show("Нужно сжигать в день " + CalcFuture() + " калорий, чтобы похудеть за указанный срок.");
+                    MessageBox.Show("Вам нужно потреблять меньше чем " + BMR + " калорий в день, чтобы похудеть.", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Нужно сжигать в день " + CalcFuture() + " калорий, чтобы похудеть за указанный срок.", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 if (radioHigherWeight.Checked)
                 {
-                    MessageBox.Show("Вам нужно потреблять больше чем " + BMR + " калорий в день, чтобы набрать вес.");
-                    MessageBox.Show("Нужно съедать в день " + CalcFuture() + " калорий, чтобы набрать вес за указанный срок.");
+                    MessageBox.Show("Вам нужно потреблять больше чем " + BMR + " калорий в день, чтобы набрать вес.", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Нужно съедать в день " + CalcFuture() + " калорий, чтобы набрать вес за указанный срок.", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             Calc?.Invoke("Вычисления завершены");
@@ -115,12 +115,12 @@ namespace Laba1
         public void IMTType()
         {
             IMT = Math.Round(CalcIMT(), 2);
-            if (IMT < 18.5) { MessageBox.Show("Ваш ИМТ: " + IMT + ". Ваш вес ниже нормального, рекомендуем набрать вес!"); }
-            if ((IMT >= 18.5) && (IMT < 25)) { MessageBox.Show("Ваш ИМТ: " + IMT + ". Ваш вес нормальный, изменение веса не рекомендуется."); }
-            if ((IMT >= 25) && (IMT < 30)) { MessageBox.Show("Ваш ИМТ: " + IMT + ". У вас избыточный вес!"); }
-            if ((IMT >= 30) && (IMT < 35)) { MessageBox.Show("Ваш ИМТ: " + IMT + ". У вас ожирение I степени!"); }
-            if ((IMT >= 35) && (IMT < 40)) { MessageBox.Show("Ваш ИМТ: " + IMT + ". У вас ожирение II степени!"); }
-            if (IMT > 40) { MessageBox.Show("Ваш ИМТ: " + IMT + ". У вас ожирение III степени!"); }
+            if (IMT < 18.5) { MessageBox.Show("Ваш ИМТ: " + IMT + ". Ваш вес ниже нормального, рекомендуем набрать вес!", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+            if ((IMT >= 18.5) && (IMT < 25)) { MessageBox.Show("Ваш ИМТ: " + IMT + ". Ваш вес нормальный, изменение веса не рекомендуется.", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+            if ((IMT >= 25) && (IMT < 30)) { MessageBox.Show("Ваш ИМТ: " + IMT + ". У вас избыточный вес!", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+            if ((IMT >= 30) && (IMT < 35)) { MessageBox.Show("Ваш ИМТ: " + IMT + ". У вас ожирение I степени!", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+            if ((IMT >= 35) && (IMT < 40)) { MessageBox.Show("Ваш ИМТ: " + IMT + ". У вас ожирение II степени!", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+            if (IMT > 40) { MessageBox.Show("Ваш ИМТ: " + IMT + ". У вас ожирение III степени!", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Information); }
         }
         public int CalcFuture()
         {
@@ -129,6 +129,8 @@ namespace Laba1
             dailyMinusCal = minusCal / int.Parse(FutureTime.Text);
             return dailyMinusCal;
         }
+
+       
     }
 
 }
