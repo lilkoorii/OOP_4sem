@@ -53,7 +53,6 @@
             this.searhToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.очиститьПолеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.удалитьКнигиИзФайлаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.inputYearUpDown = new System.Windows.Forms.NumericUpDown();
@@ -321,8 +320,7 @@
             // 
             this.searhToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.searchToolStripMenuItem,
-            this.очиститьПолеToolStripMenuItem,
-            this.удалитьКнигиИзФайлаToolStripMenuItem});
+            this.очиститьПолеToolStripMenuItem});
             this.searhToolStripMenuItem.Name = "searhToolStripMenuItem";
             this.searhToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
             this.searhToolStripMenuItem.Text = "Меню";
@@ -339,12 +337,7 @@
             this.очиститьПолеToolStripMenuItem.Name = "очиститьПолеToolStripMenuItem";
             this.очиститьПолеToolStripMenuItem.Size = new System.Drawing.Size(259, 26);
             this.очиститьПолеToolStripMenuItem.Text = "Очистить поле";
-            // 
-            // удалитьКнигиИзФайлаToolStripMenuItem
-            // 
-            this.удалитьКнигиИзФайлаToolStripMenuItem.Name = "удалитьКнигиИзФайлаToolStripMenuItem";
-            this.удалитьКнигиИзФайлаToolStripMenuItem.Size = new System.Drawing.Size(259, 26);
-            this.удалитьКнигиИзФайлаToolStripMenuItem.Text = "Удалить книги из файла";
+            this.очиститьПолеToolStripMenuItem.Click += new System.EventHandler(this.очиститьПолеToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
@@ -471,7 +464,6 @@
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem1;
         private NumericUpDown inputYearUpDown;
         private ToolStripMenuItem очиститьПолеToolStripMenuItem;
-        private ToolStripMenuItem удалитьКнигиИзФайлаToolStripMenuItem;
         private Button btnHideShowMenu;
     }
 }

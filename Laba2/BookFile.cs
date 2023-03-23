@@ -62,7 +62,7 @@ namespace Laba2
             get => author;
             set
             {
-                if (value.Length < 2)
+                if (value.Length < 2 && value.Length > 0)
                     throw new Exception("Недопустимая длина Автора.");
                 else
                     author = value;
@@ -82,7 +82,7 @@ namespace Laba2
             get => publisher;
             set
             {
-                if (value.Length < 2)
+                if (value.Length < 2 && value.Length > 0)
                     throw new Exception("Недопустимая длина Издательства.");
                 else
                     publisher = value;

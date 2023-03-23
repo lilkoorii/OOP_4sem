@@ -22,18 +22,25 @@ namespace Laba2
 
         private void loadInFile_Click(object sender, EventArgs e)
         {
-            try
+            if (listBox.Items.Count == 0)
             {
-                DataContractJsonSerializer jsonFormatter = new DataContractJsonSerializer(typeof(Library));
-
-                using (FileStream fs = new FileStream("library.json", FileMode.OpenOrCreate))
-                {
-                    jsonFormatter.WriteObject(fs, library);
-                }
+                MessageBox.Show("Невозможно сохранить пустой список!");
             }
-            catch (Exception exc)
+            else
             {
-                MessageBox.Show(exc.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                try
+                {
+                    DataContractJsonSerializer jsonFormatter = new DataContractJsonSerializer(typeof(Library));
+
+                    using (FileStream fs = new FileStream("library.json", FileMode.OpenOrCreate))
+                    {
+                        jsonFormatter.WriteObject(fs, library);
+                    }
+                }
+                catch (Exception exc)
+                {
+                    MessageBox.Show(exc.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -95,7 +102,7 @@ namespace Laba2
        
 
                 BookFile book = new BookFile(inputNameField.Text, inputAuthorField.Text, int.Parse(inputYearUpDown.Text),
-                bookSizeTrackBar.Value, inputPublisherField.Text, format, float.Parse(inputFileSizeField.Text), System.DateTime.Now);
+                bookSizeTrackBar.Value, inputPublisherField.Text, format, float.Parse(inputFileSizeField.Text), ulpDatePicker.Value);
                 var results = new List<ValidationResult>();
                 var context = new ValidationContext(book);
                 if (!Validator.TryValidateObject(book, context, results, true))
@@ -162,6 +169,11 @@ namespace Laba2
             {
                 menuStrip1.Visible = true;
             }
+        }
+
+        private void очиститьПолеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            listBox.Items.Clear();
         }
     }
 }

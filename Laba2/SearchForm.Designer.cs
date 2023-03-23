@@ -51,8 +51,6 @@
             this.поГодуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.поДатеЗагрузкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.поНазваниюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.очиститьПолеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.удалитьКнигиИзФайлаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.gbSearchFormat.SuspendLayout();
@@ -244,9 +242,7 @@
             // 
             this.searhToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.библиотекаToolStripMenuItem,
-            this.searchToolStripMenuItem,
-            this.очиститьПолеToolStripMenuItem,
-            this.удалитьКнигиИзФайлаToolStripMenuItem});
+            this.searchToolStripMenuItem});
             this.searhToolStripMenuItem.Name = "searhToolStripMenuItem";
             this.searhToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
             this.searhToolStripMenuItem.Text = "Меню";
@@ -254,7 +250,7 @@
             // библиотекаToolStripMenuItem
             // 
             this.библиотекаToolStripMenuItem.Name = "библиотекаToolStripMenuItem";
-            this.библиотекаToolStripMenuItem.Size = new System.Drawing.Size(259, 26);
+            this.библиотекаToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.библиотекаToolStripMenuItem.Text = "Библиотека";
             this.библиотекаToolStripMenuItem.Click += new System.EventHandler(this.библиотекаToolStripMenuItem_Click);
             // 
@@ -263,7 +259,7 @@
             this.searchToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.сортировкиToolStripMenuItem});
             this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            this.searchToolStripMenuItem.Size = new System.Drawing.Size(259, 26);
+            this.searchToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.searchToolStripMenuItem.Text = "Поиск";
             // 
             // сортировкиToolStripMenuItem
@@ -296,18 +292,6 @@
             this.поНазваниюToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
             this.поНазваниюToolStripMenuItem.Text = "По названию";
             this.поНазваниюToolStripMenuItem.Click += new System.EventHandler(this.поНазваниюToolStripMenuItem_Click);
-            // 
-            // очиститьПолеToolStripMenuItem
-            // 
-            this.очиститьПолеToolStripMenuItem.Name = "очиститьПолеToolStripMenuItem";
-            this.очиститьПолеToolStripMenuItem.Size = new System.Drawing.Size(259, 26);
-            this.очиститьПолеToolStripMenuItem.Text = "Очистить поле";
-            // 
-            // удалитьКнигиИзФайлаToolStripMenuItem
-            // 
-            this.удалитьКнигиИзФайлаToolStripMenuItem.Name = "удалитьКнигиИзФайлаToolStripMenuItem";
-            this.удалитьКнигиИзФайлаToolStripMenuItem.Size = new System.Drawing.Size(259, 26);
-            this.удалитьКнигиИзФайлаToolStripMenuItem.Text = "Удалить книги из файла";
             // 
             // aboutToolStripMenuItem
             // 
@@ -378,8 +362,6 @@
         private ToolStripMenuItem поГодуToolStripMenuItem;
         private ToolStripMenuItem поДатеЗагрузкиToolStripMenuItem;
         private ToolStripMenuItem поНазваниюToolStripMenuItem;
-        private ToolStripMenuItem очиститьПолеToolStripMenuItem;
-        private ToolStripMenuItem удалитьКнигиИзФайлаToolStripMenuItem;
         private ToolStripMenuItem aboutToolStripMenuItem;
         private ToolStripMenuItem aboutToolStripMenuItem1;
     }

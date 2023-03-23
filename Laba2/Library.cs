@@ -31,6 +31,11 @@ namespace Laba2
             booksList.Add(book);
         }
 
+        public void Clear()
+        {
+            booksList.Clear();
+        }
+
         public override string ToString()
         {
             return libraryName;
