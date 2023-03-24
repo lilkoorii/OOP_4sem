@@ -74,13 +74,13 @@
 
         <Grid x:Name="MainGrid" Grid.Column="1">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
+                <ColumnDefinition Name="Column1"/>
+                <ColumnDefinition Name="Column2"/>
+                <ColumnDefinition Name="Column3"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
+                <RowDefinition Name="Row1"/>
+                <RowDefinition Name="Row2"/>
                 <RowDefinition Height="60"/>
             </Grid.RowDefinitions>
 

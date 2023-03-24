@@ -60,6 +60,8 @@ namespace Lab_4.MVVM.ViewModel
 
         public MainViewModel MainViewModel { get; set; }
         public RelayCommand EditProduct1 { get; set; }
+
+        public RelayCommand SomeBoolProperty { get; set; }
         public RelayCommand EditProduct2 { get; set; }
         public RelayCommand EditProduct3 { get; set; }
         public RelayCommand EditProduct4 { get; set; }
@@ -113,8 +115,7 @@ namespace Lab_4.MVVM.ViewModel
                 }
                     /*if (mainViewModel.FilteredProducts.Count - 6 * page < 6)
                     {
-                        SelectedProducts.AddRange(Product.EmptyProducts);
-                        OnPropertyChanged("SelectedProducts");
+                        
 
                     }*/
 

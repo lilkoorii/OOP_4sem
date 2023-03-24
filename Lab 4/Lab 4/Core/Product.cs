@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Printing.IndexedProperties;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -24,14 +25,14 @@ namespace Lab_4.Core
         public double Price { get; set; }
         public Categories Category { get; set; }
         public bool InStock { get; set; }
-
+        public static readonly DependencyProperty PriceProperty;
         static Product()
         {
             EmptyProducts = new List<Product>();
-            for (int i = 0; i < 6; i++)
+            /*for (int i = 0; i < 6; i++)
             {
                 EmptyProducts.Add(new Product());
-            }
+            }*/
         }
 
         public Product()
