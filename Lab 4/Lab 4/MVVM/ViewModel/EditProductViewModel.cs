@@ -1,6 +1,8 @@
 ﻿using Lab_4.Core;
+using Lab_4.MVVM.View;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -149,6 +151,19 @@ namespace Lab_4.MVVM.ViewModel
             if (MainViewModel.ProductToEdit.Category == Product.Categories.Other)
             {
                 CheckOther = true;
+            }
+        }
+
+        public class NotifyableObject : INotifyPropertyChanged
+        {
+            public event PropertyChangedEventHandler PropertyChanged;
+
+            protected void Notify(string propertyName)
+            {
+                if (PropertyChanged != null)
+                {
+                    PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+                }
             }
         }
     }

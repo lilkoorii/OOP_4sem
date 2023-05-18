@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32825.248
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppAdo", "AppAdo.csproj", "{D22F5256-B263-495C-9F4F-15976D291BE1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		x32|Any CPU = x32|Any CPU
+		x64|Any CPU = x64|Any CPU
+		x84|Any CPU = x84|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D22F5256-B263-495C-9F4F-15976D291BE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D22F5256-B263-495C-9F4F-15976D291BE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D22F5256-B263-495C-9F4F-15976D291BE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D22F5256-B263-495C-9F4F-15976D291BE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D22F5256-B263-495C-9F4F-15976D291BE1}.x32|Any CPU.ActiveCfg = x32|Any CPU
+		{D22F5256-B263-495C-9F4F-15976D291BE1}.x32|Any CPU.Build.0 = x32|Any CPU
+		{D22F5256-B263-495C-9F4F-15976D291BE1}.x64|Any CPU.ActiveCfg = x64|Any CPU
+		{D22F5256-B263-495C-9F4F-15976D291BE1}.x64|Any CPU.Build.0 = x64|Any CPU
+		{D22F5256-B263-495C-9F4F-15976D291BE1}.x84|Any CPU.ActiveCfg = x84|Any CPU
+		{D22F5256-B263-495C-9F4F-15976D291BE1}.x84|Any CPU.Build.0 = x84|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {138E97CC-E6C0-452B-9DA6-BFBE096745F0}
+	EndGlobalSection
+EndGlobal

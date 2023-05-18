@@ -81,7 +81,52 @@ namespace Lab_4.MVVM.ViewModel
                 OnPropertyChanged();
             }
         }
+        /*private readonly CommandManager _commandManager = new CommandManager();
 
+        public ICommand UndoCommand => _commandManager.GetUndoCommand(() => _commandManager.CanUndo());
+
+
+        public ICommand RedoCommand => _commandManager.GetRedoCommand(() => _commandManager.CanRedo());
+
+        public class CommandManager
+        {
+        private readonly Stack<Action> _undoStack = new Stack<Action>();
+        private readonly Stack<Action> _redoStack = new Stack<Action>();
+
+        public bool CanUndo()
+        {
+        return _undoStack.Count > 0;
+        }
+
+        public bool CanRedo()
+        {
+        return _redoStack.Count > 0;
+        }
+        public void AddUndoAction(Action undoAction)
+        {
+        _undoStack.Push(undoAction);
+        _redoStack.Clear();
+        }
+
+        public void Undo()
+        {
+        if (_undoStack.Count > 0)
+        {
+        var undoAction = _undoStack.Pop();
+        undoAction();
+        _redoStack.Push(undoAction);
+        }
+        }
+
+        public void Redo()
+        {
+        if (_redoStack.Count > 0)
+        {
+        var redoAction = _redoStack.Pop();
+        redoAction();
+        _undoStack.Push(redoAction);
+        }
+        }*/
         public MainViewModel()
         {
             DeserializeProducts();

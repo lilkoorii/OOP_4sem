@@ -1,0 +1,48 @@
+C:\Users\Maria\source\repos\OOP_4sem\Lab 4\Lab 4\bin\Debug\net6.0-windows\Laba 4.exe
+C:\Users\Maria\source\repos\OOP_4sem\Lab 4\Lab 4\bin\Debug\net6.0-windows\Images\cursor.ani
+C:\Users\Maria\source\repos\OOP_4sem\Lab 4\Lab 4\bin\Debug\net6.0-windows\Laba 4.deps.json
+C:\Users\Maria\source\repos\OOP_4sem\Lab 4\Lab 4\bin\Debug\net6.0-windows\Laba 4.runtimeconfig.json
+C:\Users\Maria\source\repos\OOP_4sem\Lab 4\Lab 4\bin\Debug\net6.0-windows\Laba 4.dll
+C:\Users\Maria\source\repos\OOP_4sem\Lab 4\Lab 4\bin\Debug\net6.0-windows\Laba 4.pdb
+C:\Users\Maria\source\repos\OOP_4sem\Lab 4\Lab 4\obj\Debug\net6.0-windows\Laba 4.csproj.AssemblyReference.cache
+C:\Users\Maria\source\repos\OOP_4sem\Lab 4\Lab 4\obj\Debug\net6.0-windows\Locales\LocaleEN.baml
+C:\Users\Maria\source\repos\OOP_4sem\Lab 4\Lab 4\obj\Debug\net6.0-windows\Locales\LocaleRU.baml
+C:\Users\Maria\source\repos\OOP_4sem\Lab 4\Lab 4\obj\Debug\net6.0-windows\Theme\BorderStyle.baml
+C:\Users\Maria\source\repos\OOP_4sem\Lab 4\Lab 4\obj\Debug\net6.0-windows\Theme\ButtonStyle.baml
+C:\Users\Maria\source\repos\OOP_4sem\Lab 4\Lab 4\obj\Debug\net6.0-windows\Theme\CheckBoxStyle.baml
+C:\Users\Maria\source\repos\OOP_4sem\Lab 4\Lab 4\obj\Debug\net6.0-windows\Theme\GoofyAHCursor.baml
+C:\Users\Maria\source\repos\OOP_4sem\Lab 4\Lab 4\obj\Debug\net6.0-windows\Theme\RadioButtonStyle.baml
+C:\Users\Maria\source\repos\OOP_4sem\Lab 4\Lab 4\obj\Debug\net6.0-windows\Theme\TextBlockApp.baml
+C:\Users\Maria\source\repos\OOP_4sem\Lab 4\Lab 4\obj\Debug\net6.0-windows\Theme\TextBlockHeaderStyle.baml
+C:\Users\Maria\source\repos\OOP_4sem\Lab 4\Lab 4\obj\Debug\net6.0-windows\Theme\TextBlockProductPrice.baml
+C:\Users\Maria\source\repos\OOP_4sem\Lab 4\Lab 4\obj\Debug\net6.0-windows\Theme\TextBlockProductTitle.baml
+C:\Users\Maria\source\repos\OOP_4sem\Lab 4\Lab 4\obj\Debug\net6.0-windows\Theme\TextBlockSubheaderStyle.baml
+C:\Users\Maria\source\repos\OOP_4sem\Lab 4\Lab 4\obj\Debug\net6.0-windows\Theme\TextBoxStyle.baml
+C:\Users\Maria\source\repos\OOP_4sem\Lab 4\Lab 4\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\Maria\source\repos\OOP_4sem\Lab 4\Lab 4\obj\Debug\net6.0-windows\MVVM\View\AddProductView.g.cs
+C:\Users\Maria\source\repos\OOP_4sem\Lab 4\Lab 4\obj\Debug\net6.0-windows\MVVM\View\EditProductView.g.cs
+C:\Users\Maria\source\repos\OOP_4sem\Lab 4\Lab 4\obj\Debug\net6.0-windows\MVVM\View\ProductsView.g.cs
+C:\Users\Maria\source\repos\OOP_4sem\Lab 4\Lab 4\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\Maria\source\repos\OOP_4sem\Lab 4\Lab 4\obj\Debug\net6.0-windows\Laba 4_Content.g.cs
+C:\Users\Maria\source\repos\OOP_4sem\Lab 4\Lab 4\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\Maria\source\repos\OOP_4sem\Lab 4\Lab 4\obj\Debug\net6.0-windows\Laba 4_MarkupCompile.cache
+C:\Users\Maria\source\repos\OOP_4sem\Lab 4\Lab 4\obj\Debug\net6.0-windows\Laba 4_MarkupCompile.lref
+C:\Users\Maria\source\repos\OOP_4sem\Lab 4\Lab 4\obj\Debug\net6.0-windows\App.baml
+C:\Users\Maria\source\repos\OOP_4sem\Lab 4\Lab 4\obj\Debug\net6.0-windows\MainWindow.baml
+C:\Users\Maria\source\repos\OOP_4sem\Lab 4\Lab 4\obj\Debug\net6.0-windows\MVVM\View\AddProductView.baml
+C:\Users\Maria\source\repos\OOP_4sem\Lab 4\Lab 4\obj\Debug\net6.0-windows\MVVM\View\EditProductView.baml
+C:\Users\Maria\source\repos\OOP_4sem\Lab 4\Lab 4\obj\Debug\net6.0-windows\MVVM\View\ProductsView.baml
+C:\Users\Maria\source\repos\OOP_4sem\Lab 4\Lab 4\obj\Debug\net6.0-windows\Laba 4.g.resources
+C:\Users\Maria\source\repos\OOP_4sem\Lab 4\Lab 4\obj\Debug\net6.0-windows\Laba 4.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Maria\source\repos\OOP_4sem\Lab 4\Lab 4\obj\Debug\net6.0-windows\Laba 4.AssemblyInfoInputs.cache
+C:\Users\Maria\source\repos\OOP_4sem\Lab 4\Lab 4\obj\Debug\net6.0-windows\Laba 4.AssemblyInfo.cs
+C:\Users\Maria\source\repos\OOP_4sem\Lab 4\Lab 4\obj\Debug\net6.0-windows\Laba 4.csproj.CoreCompileInputs.cache
+C:\Users\Maria\source\repos\OOP_4sem\Lab 4\Lab 4\obj\Debug\net6.0-windows\Laba 4.dll
+C:\Users\Maria\source\repos\OOP_4sem\Lab 4\Lab 4\obj\Debug\net6.0-windows\refint\Laba 4.dll
+C:\Users\Maria\source\repos\OOP_4sem\Lab 4\Lab 4\obj\Debug\net6.0-windows\Laba 4.pdb
+C:\Users\Maria\source\repos\OOP_4sem\Lab 4\Lab 4\obj\Debug\net6.0-windows\Laba 4.genruntimeconfig.cache
+C:\Users\Maria\source\repos\OOP_4sem\Lab 4\Lab 4\obj\Debug\net6.0-windows\ref\Laba 4.dll
+C:\Users\Maria\source\repos\OOP_4sem\Lab 4\Lab 4\obj\Debug\net6.0-windows\Theme\PinkStyle.baml
+C:\Users\Maria\source\repos\OOP_4sem\Lab 4\Lab 4\bin\Debug\net6.0-windows\Laba 4.dll.config
+C:\Users\Maria\source\repos\OOP_4sem\Lab 4\Lab 4\obj\Debug\net6.0-windows\Theme\BackStyle.baml
+C:\Users\Maria\source\repos\OOP_4sem\Lab 4\Lab 4\obj\Debug\net6.0-windows\Theme\GridStyle.baml

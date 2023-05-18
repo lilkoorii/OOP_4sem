@@ -24,5 +24,17 @@ namespace Lab_4.MVVM.View
         {
             InitializeComponent();
         }
+
+        private void LightTheme_Checked(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.ColorMode = "Light";
+            Properties.Settings.Default.Save();
+        }
+
+        private void PinkTheme_Checked(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.ColorMode = "Pink";
+            Properties.Settings.Default.Save();
+        }
     }
 }

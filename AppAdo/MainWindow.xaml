@@ -1,0 +1,60 @@
+﻿<Window x:Class="AppAdo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppAdo"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <ListBox Margin="0,285,137,5" x:Name="rezult" Panel.ZIndex="20"/>
+        <TabControl x:Name ="mainTab" SelectionChanged="MainTab_SelectionChanged">
+            <TabItem x:Name="accountItem" Header="BOOKS">
+                <DataGrid x:Name="BooksGrid" CellEditEnding="BooksGrid_CellEditEnding" AutoGenerateColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False" HorizontalScrollBarVisibility="Auto" CanUserAddRows="False" Margin="0,0,0,0.4">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Book_Name, UpdateSourceTrigger=PropertyChanged}" Header="Название"/>
+                        <DataGridTextColumn Binding="{Binding File_Size}" Header="Размер файла" />
+                        <DataGridTextColumn Binding="{Binding Type}" Header="Тип"/>
+                        <DataGridTextColumn Binding="{Binding UDK}" Header="УДК"/>
+                        <DataGridTextColumn Binding="{Binding Page_Quantity}" Header="Страницы"/>
+                        <DataGridTextColumn Binding="{Binding Publisher}" Header="Изд-ль" />
+                        <DataGridTextColumn Binding="{Binding Publishing_Year}" Header="Год изд-ва"/> 
+                        <DataGridTextColumn Binding="{Binding Author_ID}" Header="ID автора"/>
+                        <DataGridTextColumn Binding="{Binding Upload_Time, StringFormat={}{0:MM/dd/yyyy}}" Header="Дата загрузки"/>
+
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+            <TabItem x:Name="AddressItem" Header="AUTHORS">
+                <DataGrid x:Name="AuthorsGrid" CellEditEnding="BooksGrid_CellEditEnding" AutoGenerateColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False" HorizontalScrollBarVisibility="Disabled" CanUserAddRows="False" Margin="0,0,0,0.4">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding ID}" IsReadOnly="True" Header="ID"/>
+                        <DataGridTextColumn Binding="{Binding Name}" Header="Имя"/>
+                        <DataGridTextColumn Binding="{Binding Surname}" Header="Фамилия"/>
+                        <DataGridTextColumn Binding="{Binding Lastname}" Header="Отчество" />
+                        <DataGridTextColumn Binding="{Binding Country}" Header="Страна"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+        </TabControl>
+        <StackPanel HorizontalAlignment="Center" Grid.Row="1" Orientation="Horizontal">
+            <Button x:Name="saveButton" Content="Сохранить" Click="SaveButton_Click" />
+            <Button x:Name="updateButton" Content="Обновить" Click="UpdateButton_Click" />
+            <Button Click="BackButton_Click" Width="Auto">
+                <Image Source="C:\Users\Maria\source\repos\OOP_4sem\Laba8\resources\ArrowLeft.png" Height="30"></Image>
+            </Button>
+            <Button Click="NextButton_Click"  Width="Auto">
+                <Image Source="C:\Users\Maria\source\repos\OOP_4sem\Laba8\resources\ArrowRight.png" Height="30"></Image>
+            </Button>
+            <Button x:Name="deleteButton" Content="Удалить" Click="DeleteButton_Click" />
+            <Button x:Name="addButton" Content="Добавить" Click="AddButton_Click" />
+            <Button x:Name="sortDescButton" Content="Страницы Убыв." Click="DescButton_Click" />
+            <Button x:Name="sortAscButton" Content="Страницы Возр." Click="AscButton_Click" />
+        </StackPanel>
+    </Grid>
+</Window>
+

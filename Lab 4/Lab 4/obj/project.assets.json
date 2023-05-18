@@ -14,9 +14,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Maria\\source\\repos\\OOP_4sem\\Lab 4\\Lab 4\\Lab 4.csproj",
-      "projectName": "Lab 4",
-      "projectPath": "C:\\Users\\Maria\\source\\repos\\OOP_4sem\\Lab 4\\Lab 4\\Lab 4.csproj",
+      "projectUniqueName": "C:\\Users\\Maria\\source\\repos\\OOP_4sem\\Lab 4\\Lab 4\\Laba 4.csproj",
+      "projectName": "Laba 4",
+      "projectPath": "C:\\Users\\Maria\\source\\repos\\OOP_4sem\\Lab 4\\Lab 4\\Laba 4.csproj",
       "packagesPath": "C:\\Users\\Maria\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Maria\\source\\repos\\OOP_4sem\\Lab 4\\Lab 4\\obj\\",
       "projectStyle": "PackageReference",

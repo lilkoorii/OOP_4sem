@@ -23,6 +23,9 @@
                 <ResourceDictionary Source="Theme/TextBlockProductTitle.xaml"/>
                 <ResourceDictionary Source="Theme/TextBlockProductPrice.xaml"/>
                 <ResourceDictionary Source="Theme/TextBlockApp.xaml"/>
+                <ResourceDictionary Source="Theme/BackStyle.xaml"/>
+                <ResourceDictionary Source="Theme/PinkStyle.xaml"/>
+                <ResourceDictionary Source="Theme/GridStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
             <DataTemplate DataType="{x:Type viewModel:ProductViewModel}"> 

@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:Lab_4.MVVM.View"
              mc:Ignorable="d" 
              d:DesignHeight="650" d:DesignWidth="800">
-    <Grid Margin="10" Background="#FFFFEECC">
+    <Grid Margin="10" Style="{StaticResource Grid}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
@@ -53,9 +53,9 @@
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 Margin="10">
-                <TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"
+                <TextBox Name="TextBox1"  Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"
                              Style="{StaticResource TextBox}"
-                             FontSize="14">
+                             FontSize="14" >
                     <TextBox.InputBindings>
                         <KeyBinding Key="Return" Command="{Binding EnterName}" />
                     </TextBox.InputBindings>

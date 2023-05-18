@@ -75,6 +75,7 @@ namespace Lab_4.MVVM.ViewModel
         public RelayCommand CheckCategoryClothing { get; set; }
         public RelayCommand CheckCategoryAccessories { get; set; }
         public RelayCommand CheckCategoryOther { get; set; }
+        public RelayCommand Pink { get; set; }
 
         public ProductViewModel(MainViewModel mainViewModel)
         {
@@ -217,6 +218,7 @@ namespace Lab_4.MVVM.ViewModel
 
                 MainViewModel.FilterProducts();
             });
+
         }
 
         public void EditProduct(int index)
@@ -244,5 +246,7 @@ namespace Lab_4.MVVM.ViewModel
                 OnPropertyChanged("SelectedProducts");
             }
         }
+
+        
     }
 }
