@@ -10,8 +10,8 @@
         <DataGrid Name="DataGrid1" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="175" Margin="29,49,0,0" VerticalAlignment="Top" Width="463">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Id}" Header="ID" Width="30"/>
-                <DataGridTextColumn Binding="{Binding Title}" Header="Название канала" Width="110"/>
-                <DataGridTextColumn Binding="{Binding Description}" Header="Описание" Width="70"/>
+                <DataGridTextColumn Binding="{Binding Title, ValidatesOnDataErrors=True}" Header="Название видео" Width="110"/>
+                <DataGridTextColumn Binding="{Binding Description, ValidatesOnDataErrors=True}" Header="Описание" Width="70"/>
                 <DataGridTextColumn Binding="{Binding Link}" Header="Ссылка" Width="65"/>
                 <DataGridTextColumn Binding="{Binding PubDate}" Header="Дата публикации" Width="110"/>
                 <DataGridTextColumn Binding="{Binding ChannelId}" Header="ID канала" Width="70"/>

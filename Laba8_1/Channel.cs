@@ -1,6 +1,7 @@
 ﻿using Laba9;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +11,9 @@ namespace Laba9
 {//определяем  модели
     class Channel // настройки канала
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
+
         public string Title { get; set; } //название канала
         public string Description { get; set; } //описание канала
         public string Link { get; set; } //ссылка на канал

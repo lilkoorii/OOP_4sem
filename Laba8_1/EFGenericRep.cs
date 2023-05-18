@@ -35,7 +35,7 @@ namespace Laba9
 
         public void Create(TEntity item)
         {
-            _dbSet.Add(item);
+            _dbSet.Attach(item);
             _context.SaveChanges();
         }
         public void Update(TEntity item)

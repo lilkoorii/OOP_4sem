@@ -154,6 +154,7 @@ namespace Laba9
                     }
                 }
             }
+
             //db.SaveChanges();
             MessageBox.Show("Объект удален");
         }
