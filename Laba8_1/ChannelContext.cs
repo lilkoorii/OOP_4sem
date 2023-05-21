@@ -7,7 +7,7 @@ using Laba9;
 using Microsoft.EntityFrameworkCore;
 
 namespace Laba9
-{//контекст  +  паттерн  Репозиторий
+{//Unit of Work (контекст)  +  паттерн  Репозиторий
     class ChannelContext : DbContext
     {
         public ChannelContext()

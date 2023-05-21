@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data.SqlClient;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace AppAdo
 {
@@ -57,8 +58,12 @@ namespace AppAdo
                 thisConnection.Open();
                 SqlCommand cmd = new SqlCommand("Create database ELIBRARY", thisConnection);
                 cmd.ExecuteNonQuery();
-            }
+                SqlCommand command = thisConnection.CreateCommand();
 
+                //ниже SQL-запросы на создание таблиц
+                command.CommandText = "CREATE TABLE [dbo].[Student] (\r\n    [NAME]      NVARCHAR (50) NULL,\r\n    [SPECIALTY] NVARCHAR (20) NULL,\r\n    [AGE]       INT           NULL,\r\n    [BIRTHDAY]  DATE          NULL,\r\n    [COURSE]    INT           NULL,\r\n    [SEX]       CHAR (1)      NULL,\r\n    [AVGSCORE]  FLOAT (53)    NULL\r\n);";
+                command.ExecuteNonQuery();
+            }
         }
 
         public MainWindow()
@@ -73,7 +78,7 @@ namespace AppAdo
             FillCurrentGrid();
         }
 
-        private void BooksGrid_CellEditEnding(object sender, DataGridCellEditEndingEventArgs e)
+        private void BooksGrid_CellEditEnding(object sender, DataGridCellEditEndingEventArgs e) //ВАЛИДАЦИЯ
         {
             var editedTextbox = (TextBox)e.EditingElement;
             if (e.Column.Header.ToString() == "Название")
@@ -176,10 +181,9 @@ namespace AppAdo
                 using (SqlConnection connection = new SqlConnection(this.connectionString))
                 {
                    
-                    //открыть соединение
                     try
                     {
-                        SqlConnection thisConnection =
+                        SqlConnection thisConnection =   //попробовать открыть соединение по ConnectionString если есть БД
                                new SqlConnection(
                                ConfigurationManager.
                                ConnectionStrings["DefaultConnection"].
@@ -189,17 +193,16 @@ namespace AppAdo
                     catch (SqlException ex)
                     {
                         thisConnection.Open();
-                        SqlCommand cmd = new SqlCommand("Create database ELIBRARY", thisConnection);
-                        cmd.ExecuteNonQuery();
+                        SqlCommand cmd = new SqlCommand("Create database ELIBRARY", thisConnection); //создать новую БД если ее нет
                     }
 
                     this.adapter = new SqlDataAdapter(GetSql(), connection);
                     this.commandBuilder = new SqlCommandBuilder(this.adapter);
 
 
-                    if (this.currentTableName == Tables.AUTHORS.ToString())
+                    if (this.currentTableName == Tables.AUTHORS.ToString()) //заполняем адаптер данными из БД
                     {
-                        this.adapter.InsertCommand = new SqlCommand("sp_InsertAuthors", connection)
+                        this.adapter.InsertCommand = new SqlCommand("sp_InsertAuthors", connection) //sp_InsertAuthors - Хранимая процедура в БД
                         {
                             CommandType = CommandType.StoredProcedure
                         };
@@ -238,7 +241,7 @@ namespace AppAdo
             }
         }
 
-        private void AddButton_Click(object sender, RoutedEventArgs e)
+        private void AddButton_Click(object sender, RoutedEventArgs e) //добавление книги/автора
         {
             while (!(this.ds.Tables[0].Rows.Count < this.pageSize))
             {
@@ -248,12 +251,12 @@ namespace AppAdo
             this.currentGrid.CanUserAddRows = true;
         }
 
-        private void UpdateButton_Click(object sender, RoutedEventArgs e)
+        private void UpdateButton_Click(object sender, RoutedEventArgs e) //обновление DataGrid-а
         {
             FillCurrentGrid();
         }
 
-        private void BackButton_Click(object sender, RoutedEventArgs e)
+        private void BackButton_Click(object sender, RoutedEventArgs e) //навигация по страницам (NextButton - вперед)
         {
             if (this.pageNumber == 0)
             {
@@ -277,7 +280,7 @@ namespace AppAdo
             GetPage();
         }
 
-        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        private void DeleteButton_Click(object sender, RoutedEventArgs e) //удалить книгу/автора
         {
             if (this.currentGrid.SelectedItems != null)
             {
@@ -295,10 +298,10 @@ namespace AppAdo
         private void DescButton_Click(object sender, RoutedEventArgs e)
         {
             thisConnection.Open();
-            SqlCommand cmd = new SqlCommand("Select * from BOOKS order by Page_Quantity desc", thisConnection);
+            SqlCommand cmd = new SqlCommand("Select * from BOOKS order by Page_Quantity desc", thisConnection); //Запрос, сортировать кол-во страниц по убыванию
             try
             {
-                cmd.ExecuteNonQuery();
+                cmd.ExecuteNonQuery(); //пробуем выполнить SQL-запрос
                 SortDescGrid();
                 this.adapter.Update(this.ds);
                 MessageBox.Show("Сортировка прошла успешно ", "Отсортировано", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -313,7 +316,7 @@ namespace AppAdo
             }
         }
 
-        public void SortDescGrid()
+        public void SortDescGrid()  //сортируем и обновляем данные DataGrid-а
         {
             SqlCommand cmd = new SqlCommand("Select * from BOOKS order by Page_Quantity desc", thisConnection);
             DataTable dt = new DataTable();
@@ -323,7 +326,7 @@ namespace AppAdo
             BooksGrid.ItemsSource = dt.DefaultView;
         }
 
-        private void AscButton_Click(object sender, RoutedEventArgs e)
+        private void AscButton_Click(object sender, RoutedEventArgs e) //сорт. по возрастанию через SQL-запрос
         {
             thisConnection.Open();
             SqlCommand cmd = new SqlCommand("Select * from BOOKS order by Page_Quantity asc", thisConnection);
@@ -364,7 +367,7 @@ namespace AppAdo
             photoViewer.Show();
         }
 
-        private void MainTab_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void MainTab_SelectionChanged(object sender, SelectionChangedEventArgs e) //меняем вкладку с таблицами (BOOKS на AUTHORS и наоборот)
         {
             try
             {
@@ -393,7 +396,7 @@ namespace AppAdo
             }
         }
 
-        private string GetSql()
+        private string GetSql() //запрос для получения строк из БД на странице
         {
             return "SELECT * FROM " + this.currentTableName + " ORDER BY " + this.currentPrimaryColumnName + " OFFSET ((" + this.pageNumber + ") * " + this.pageSize + ") " +
                 "ROWS FETCH NEXT " + this.pageSize + " ROWS ONLY";
@@ -416,7 +419,7 @@ namespace AppAdo
             }
         }
 
-        private void FillCurrentGrid()
+        private void FillCurrentGrid() //заполнение DataGrid-а данными
         {
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -437,7 +440,7 @@ namespace AppAdo
                 //Выполить команду и получить данные
                 SqlDataReader thisReader =
                 getCommand.ExecuteReader();
-                while (thisReader.Read())
+                while (thisReader.Read())  //по колонкам получаем значения в ListBox (для разработки, можно игнорить)
                 {
                     string itemText = (string)thisReader.GetValue(0) +
                       " | " +
@@ -467,20 +470,20 @@ namespace AppAdo
                 // транзакция
                 SqlTransaction transaction = connection.BeginTransaction();
                 SqlCommand command = connection.CreateCommand();
-                command.Transaction = transaction;
+                command.Transaction = transaction;      //транзакция
                 try
                 {
                     command.CommandText = "select * from BOOKS";
                     command.ExecuteNonQuery();
                     command.CommandText = "Delete from BOOKS where Page_Quantity = 200";
                     command.ExecuteNonQuery();
-                    //command.CommandText = "Insert into BOOKS values ('Книга2', 13.6, 'PDF', 12348, 250, 'Роскнига', 2020, 11112, 05/05/2020)";
+                    //command.CommandText = "Insert into BOOKS values ('Книга2', 13.6, 'PDF', 12348, 250, 'Роскнига', 2020, 11112, 05/05/2020)"; //выдаст ошибку транзакции, т.к. Книга2 уже есть
                     //command.ExecuteNonQuery();
 
                     transaction.Commit();
 
                 }
-                catch (Exception ex)
+                catch (Exception ex)  //откат транзакции в случае ошибки
                 {
                     MessageBox.Show(ex.Message);
                     transaction.Rollback();

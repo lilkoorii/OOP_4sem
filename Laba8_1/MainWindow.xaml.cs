@@ -1,7 +1,10 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
+using System.Data.Entity;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -12,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data;
 
 namespace Laba9
 {
@@ -80,7 +84,7 @@ namespace Laba9
             }
         }
 
-        private void Change_Click(object sender, EventArgs e)
+        private async void Change_Click(object sender, EventArgs e)
         {
             if (DataGrid1.SelectedItems.Count > 0)
             {
@@ -115,7 +119,9 @@ namespace Laba9
                             item.Channel = (Channel)iWin.comboBox1.SelectedItem;
 
                             itemRep.Update(item);
-                            UpdateDB();
+                            await Task.Run(() => UpdateDB());
+                            //UpdateDB();
+                            
                             //db.Entry(item).State = EntityState.Modified;
                             //db.SaveChanges();
 
@@ -164,5 +170,62 @@ namespace Laba9
             ChannelWindow cWin = new ChannelWindow();
             cWin.Show();
         }
+
+        private void Sort_Click(object sender, RoutedEventArgs e)
+        {
+            using (ChannelContext db2 = new ChannelContext())
+            {
+                List<Item> itemresult = (from p in db2.Items     //LINQ to Entity
+                           orderby p.Title descending
+                           where (p.ChannelId == 1)
+                           select p).ToList();
+                DataGrid1.ItemsSource = itemresult;
+            }
+        }
+
+        private async void Transaction_Click(object sender, RoutedEventArgs e) //транзакция + sql-запрос
+        {
+            using (ChannelContext db1 = new ChannelContext())
+            {
+                using var transaction = db1.Database.BeginTransaction();
+                {
+                    try
+                    {
+                        db1.Items.Add(new Item { Link = "channeltest.com/vid" });
+                        await db1.SaveChangesAsync(); //асинхронное сохранение
+
+                        int num = db1.Database.ExecuteSqlRaw("Select * from Items");
+
+                        await transaction.CommitAsync();
+                    }
+                    catch (Exception)
+                    {
+                        transaction.Rollback();
+                        MessageBox.Show("Транзакция не выполнена");
+                    }
+                }
+            }
+        }
+
+        private void Search_Click(object sender, RoutedEventArgs e)
+        {
+            using (ChannelContext db3 = new ChannelContext())
+            {
+                //var res1 = db3.Database.ExecuteSqlRaw("Select * from Items where Title like '" + Search1.Text + "';");
+                var search = Search1.Text;
+                var search2 = Search2.Text;
+                List<Item> result = db3.Items    //LINQ to Entity
+                                     .FromSqlRaw($"SELECT * FROM Items WHERE Items.Title LIKE '%{search}%' AND Items.Description LIKE '%{search2}%'; ")
+                                         .ToList();
+                DataGrid1.ItemsSource = result;
+            }
+
+        }
+
+        private void DataGrid1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
     }
 }

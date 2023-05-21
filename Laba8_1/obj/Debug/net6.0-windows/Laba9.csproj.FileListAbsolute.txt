@@ -5,10 +5,12 @@ C:\Users\Maria\source\repos\OOP_4sem\Laba8_1\bin\Debug\net6.0-windows\Laba9.dll
 C:\Users\Maria\source\repos\OOP_4sem\Laba8_1\bin\Debug\net6.0-windows\Laba9.pdb
 C:\Users\Maria\source\repos\OOP_4sem\Laba8_1\bin\Debug\net6.0-windows\Azure.Core.dll
 C:\Users\Maria\source\repos\OOP_4sem\Laba8_1\bin\Debug\net6.0-windows\Azure.Identity.dll
+C:\Users\Maria\source\repos\OOP_4sem\Laba8_1\bin\Debug\net6.0-windows\Humanizer.dll
 C:\Users\Maria\source\repos\OOP_4sem\Laba8_1\bin\Debug\net6.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\Maria\source\repos\OOP_4sem\Laba8_1\bin\Debug\net6.0-windows\Microsoft.Data.SqlClient.dll
 C:\Users\Maria\source\repos\OOP_4sem\Laba8_1\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.dll
 C:\Users\Maria\source\repos\OOP_4sem\Laba8_1\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Maria\source\repos\OOP_4sem\Laba8_1\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\Maria\source\repos\OOP_4sem\Laba8_1\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\Maria\source\repos\OOP_4sem\Laba8_1\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.SqlServer.dll
 C:\Users\Maria\source\repos\OOP_4sem\Laba8_1\bin\Debug\net6.0-windows\Microsoft.Extensions.Caching.Abstractions.dll
@@ -16,6 +18,7 @@ C:\Users\Maria\source\repos\OOP_4sem\Laba8_1\bin\Debug\net6.0-windows\Microsoft.
 C:\Users\Maria\source\repos\OOP_4sem\Laba8_1\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
 C:\Users\Maria\source\repos\OOP_4sem\Laba8_1\bin\Debug\net6.0-windows\Microsoft.Extensions.DependencyInjection.dll
 C:\Users\Maria\source\repos\OOP_4sem\Laba8_1\bin\Debug\net6.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Maria\source\repos\OOP_4sem\Laba8_1\bin\Debug\net6.0-windows\Microsoft.Extensions.DependencyModel.dll
 C:\Users\Maria\source\repos\OOP_4sem\Laba8_1\bin\Debug\net6.0-windows\Microsoft.Extensions.Logging.dll
 C:\Users\Maria\source\repos\OOP_4sem\Laba8_1\bin\Debug\net6.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\Maria\source\repos\OOP_4sem\Laba8_1\bin\Debug\net6.0-windows\Microsoft.Extensions.Options.dll
@@ -29,10 +32,13 @@ C:\Users\Maria\source\repos\OOP_4sem\Laba8_1\bin\Debug\net6.0-windows\Microsoft.
 C:\Users\Maria\source\repos\OOP_4sem\Laba8_1\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\Maria\source\repos\OOP_4sem\Laba8_1\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Tokens.dll
 C:\Users\Maria\source\repos\OOP_4sem\Laba8_1\bin\Debug\net6.0-windows\Microsoft.SqlServer.Server.dll
+C:\Users\Maria\source\repos\OOP_4sem\Laba8_1\bin\Debug\net6.0-windows\Mono.TextTemplating.dll
 C:\Users\Maria\source\repos\OOP_4sem\Laba8_1\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
 C:\Users\Maria\source\repos\OOP_4sem\Laba8_1\bin\Debug\net6.0-windows\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\Maria\source\repos\OOP_4sem\Laba8_1\bin\Debug\net6.0-windows\System.Memory.Data.dll
 C:\Users\Maria\source\repos\OOP_4sem\Laba8_1\bin\Debug\net6.0-windows\System.Runtime.Caching.dll
+C:\Users\Maria\source\repos\OOP_4sem\Laba8_1\bin\Debug\net6.0-windows\System.Text.Encodings.Web.dll
+C:\Users\Maria\source\repos\OOP_4sem\Laba8_1\bin\Debug\net6.0-windows\System.Text.Json.dll
 C:\Users\Maria\source\repos\OOP_4sem\Laba8_1\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 C:\Users\Maria\source\repos\OOP_4sem\Laba8_1\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 C:\Users\Maria\source\repos\OOP_4sem\Laba8_1\bin\Debug\net6.0-windows\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
@@ -45,6 +51,7 @@ C:\Users\Maria\source\repos\OOP_4sem\Laba8_1\bin\Debug\net6.0-windows\runtimes\w
 C:\Users\Maria\source\repos\OOP_4sem\Laba8_1\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\Maria\source\repos\OOP_4sem\Laba8_1\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\Maria\source\repos\OOP_4sem\Laba8_1\bin\Debug\net6.0-windows\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\Maria\source\repos\OOP_4sem\Laba8_1\bin\Debug\net6.0-windows\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
 C:\Users\Maria\source\repos\OOP_4sem\Laba8_1\obj\Debug\net6.0-windows\Laba9.csproj.AssemblyReference.cache
 C:\Users\Maria\source\repos\OOP_4sem\Laba8_1\obj\Debug\net6.0-windows\ChannelWin.g.cs
 C:\Users\Maria\source\repos\OOP_4sem\Laba8_1\obj\Debug\net6.0-windows\ChannelWindow.g.cs
@@ -68,3 +75,5 @@ C:\Users\Maria\source\repos\OOP_4sem\Laba8_1\obj\Debug\net6.0-windows\refint\Lab
 C:\Users\Maria\source\repos\OOP_4sem\Laba8_1\obj\Debug\net6.0-windows\Laba9.pdb
 C:\Users\Maria\source\repos\OOP_4sem\Laba8_1\obj\Debug\net6.0-windows\Laba9.genruntimeconfig.cache
 C:\Users\Maria\source\repos\OOP_4sem\Laba8_1\obj\Debug\net6.0-windows\ref\Laba9.dll
+C:\Users\Maria\source\repos\OOP_4sem\Laba8_1\bin\Debug\net6.0-windows\EntityFramework.SqlServer.dll
+C:\Users\Maria\source\repos\OOP_4sem\Laba8_1\bin\Debug\net6.0-windows\EntityFramework.dll

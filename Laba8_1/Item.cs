@@ -12,6 +12,7 @@ namespace Laba9
     class Item : IDataErrorInfo
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key]
         public int Id { get; set; }
 
         [Required]
@@ -29,6 +30,7 @@ namespace Laba9
         [Required]
         public string PubDate { get; set; } //дата публикации
 
+        [ForeignKey("Channel")]
         public int? ChannelId { get; set; }
         public virtual Channel Channel { get; set; }
 

@@ -36,18 +36,18 @@ namespace Laba9
         public void Create(TEntity item)
         {
             _dbSet.Attach(item);
-            _context.SaveChanges();
+            _context.SaveChangesAsync();
         }
         public void Update(TEntity item)
         {
             _context.Entry(item).State = EntityState.Modified;
-            _context.SaveChanges();
+            _context.SaveChangesAsync();
         }
         public void Remove(TEntity item)
         {
             _context.Entry(item).State = EntityState.Deleted;
             _dbSet.Remove(item);
-            _context.SaveChanges();
+            _context.SaveChangesAsync();
         }
     }
 }

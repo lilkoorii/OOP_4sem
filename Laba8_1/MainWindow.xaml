@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Laba9"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="350" Width="747">
     <Grid Background="CornflowerBlue">
-        <DataGrid Name="DataGrid1" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="175" Margin="29,49,0,0" VerticalAlignment="Top" Width="463">
+        <DataGrid Name="DataGrid1" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="175" Margin="29,49,0,0" VerticalAlignment="Top" Width="555" SelectionChanged="DataGrid1_SelectionChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Id}" Header="ID" Width="30"/>
                 <DataGridTextColumn Binding="{Binding Title, ValidatesOnDataErrors=True}" Header="Название видео" Width="110"/>
-                <DataGridTextColumn Binding="{Binding Description, ValidatesOnDataErrors=True}" Header="Описание" Width="70"/>
-                <DataGridTextColumn Binding="{Binding Link}" Header="Ссылка" Width="65"/>
+                <DataGridTextColumn Binding="{Binding Description, ValidatesOnDataErrors=True}" Header="Описание" Width="110"/>
+                <DataGridTextColumn Binding="{Binding Link}" Header="Ссылка" Width="100"/>
                 <DataGridTextColumn Binding="{Binding PubDate}" Header="Дата публикации" Width="110"/>
                 <DataGridTextColumn Binding="{Binding ChannelId}" Header="ID канала" Width="70"/>
 
@@ -22,6 +22,14 @@
         <Button Content="Change" HorizontalAlignment="Left" Margin="283,247,0,0" VerticalAlignment="Top" Width="75" Click="Change_Click"/>
         <Button Content="Delete" HorizontalAlignment="Left" Margin="155,247,0,0" VerticalAlignment="Top" Width="75" Click="Delete_Click" RenderTransformOrigin="0.259,0.698"/>
         <Button Content="Channels" HorizontalAlignment="Left" Margin="417,247,0,0" VerticalAlignment="Top" Width="75" Click="Channels_Click"/>
+        <Button Content="Sort Titles and Channel" HorizontalAlignment="Left" Margin="201,283,0,0" VerticalAlignment="Top" Width="172" Click="Sort_Click"/>
+        <Button Content="Make Transacton" HorizontalAlignment="Left" Margin="66,283,0,0" VerticalAlignment="Top" Width="120" Click="Transaction_Click"/>
+        <Label Content="Поиск" HorizontalAlignment="Left" Margin="595,44,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <TextBox Name="Search1" HorizontalAlignment="Left" Margin="595,96,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="Search2" HorizontalAlignment="Left" Margin="596,148,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <Button Content="Search" HorizontalAlignment="Left" Margin="610,181,0,0" VerticalAlignment="Top" Width="90" Click="Search_Click"/>
+        <Label Content="Название:" HorizontalAlignment="Left" Margin="595,70,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <Label Content="Описание:" HorizontalAlignment="Left" Margin="595,124,0,0" VerticalAlignment="Top" Foreground="White"/>
         <!--<Button Content="Refresh" HorizontalAlignment="Left" Margin="217,292,0,0" VerticalAlignment="Top" Width="75" Click="UpdateDB" RenderTransformOrigin="0.259,0.698"/>-->
 
     </Grid>
