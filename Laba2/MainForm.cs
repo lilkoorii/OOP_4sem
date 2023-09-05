@@ -103,6 +103,7 @@ namespace Laba2
 
                 BookFile book = new BookFile(inputNameField.Text, inputAuthorField.Text, int.Parse(inputYearUpDown.Text),
                 bookSizeTrackBar.Value, inputPublisherField.Text, format, float.Parse(inputFileSizeField.Text), ulpDatePicker.Value);
+                //валидейшен
                 var results = new List<ValidationResult>();
                 var context = new ValidationContext(book);
                 if (!Validator.TryValidateObject(book, context, results, true))

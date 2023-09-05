@@ -130,7 +130,10 @@ namespace Laba1
             return dailyMinusCal;
         }
 
-       
+        private void radioMale_MouseDown(object sender, MouseEventArgs e)
+        {
+
+        }
     }
 
 }

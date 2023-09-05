@@ -1,0 +1,25 @@
+﻿<Window x:Class="EXAM2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EXAM2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="131*"/>
+            <ColumnDefinition Width="269*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox x:Name="SurnameText" HorizontalAlignment="Left" Margin="50,126,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="184" Grid.Column="1"/>
+        <Label Content="Фамилия:" HorizontalAlignment="Left" Margin="50,95,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <TextBox x:Name="Text1" HorizontalAlignment="Left" Margin="50,180,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="184" Grid.Column="1"/>
+        <Label Content="Оценка1" HorizontalAlignment="Left" Margin="50,149,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <TextBox x:Name="Text2" HorizontalAlignment="Left" Margin="50,235,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="184" Grid.Column="1"/>
+        <Label Content="Оценка2" HorizontalAlignment="Left" Margin="50,0,0,0" VerticalAlignment="Center" Grid.Column="1"/>
+        <TextBox x:Name="Text3" HorizontalAlignment="Left" Margin="50,289,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="184" Grid.Column="1"/>
+        <Label Content="Оценка3" HorizontalAlignment="Left" Margin="50,258,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Button Content="Сохранить" HorizontalAlignment="Left" Margin="122,348,0,0" VerticalAlignment="Top" Click="Button_Click" Grid.Column="1"/>
+
+    </Grid>
+</Window>

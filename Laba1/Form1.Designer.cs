@@ -123,6 +123,7 @@
             this.radioMale.TabStop = true;
             this.radioMale.Text = "Мужской";
             this.radioMale.UseVisualStyleBackColor = true;
+            this.radioMale.MouseDown += new System.Windows.Forms.MouseEventHandler(this.radioMale_MouseDown);
             // 
             // label3
             // 
@@ -207,7 +208,6 @@
             this.FutureWeight.PlaceholderText = "Введите вес...";
             this.FutureWeight.Size = new System.Drawing.Size(125, 27);
             this.FutureWeight.TabIndex = 15;
-            this.FutureWeight.TextChanged += new System.EventHandler(this.FutureWeight_TextChanged);
             // 
             // FutureTime
             // 

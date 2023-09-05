@@ -1,0 +1,17 @@
+C:\Users\Maria\source\repos\OOP_4sem\EXAM1\bin\Debug\net6.0-windows\EXAM1.exe
+C:\Users\Maria\source\repos\OOP_4sem\EXAM1\bin\Debug\net6.0-windows\EXAM1.deps.json
+C:\Users\Maria\source\repos\OOP_4sem\EXAM1\bin\Debug\net6.0-windows\EXAM1.runtimeconfig.json
+C:\Users\Maria\source\repos\OOP_4sem\EXAM1\bin\Debug\net6.0-windows\EXAM1.dll
+C:\Users\Maria\source\repos\OOP_4sem\EXAM1\bin\Debug\net6.0-windows\EXAM1.pdb
+C:\Users\Maria\source\repos\OOP_4sem\EXAM1\obj\Debug\net6.0-windows\EXAM1.csproj.AssemblyReference.cache
+C:\Users\Maria\source\repos\OOP_4sem\EXAM1\obj\Debug\net6.0-windows\EXAM1.Form1.resources
+C:\Users\Maria\source\repos\OOP_4sem\EXAM1\obj\Debug\net6.0-windows\EXAM1.csproj.GenerateResource.cache
+C:\Users\Maria\source\repos\OOP_4sem\EXAM1\obj\Debug\net6.0-windows\EXAM1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Maria\source\repos\OOP_4sem\EXAM1\obj\Debug\net6.0-windows\EXAM1.AssemblyInfoInputs.cache
+C:\Users\Maria\source\repos\OOP_4sem\EXAM1\obj\Debug\net6.0-windows\EXAM1.AssemblyInfo.cs
+C:\Users\Maria\source\repos\OOP_4sem\EXAM1\obj\Debug\net6.0-windows\EXAM1.csproj.CoreCompileInputs.cache
+C:\Users\Maria\source\repos\OOP_4sem\EXAM1\obj\Debug\net6.0-windows\EXAM1.dll
+C:\Users\Maria\source\repos\OOP_4sem\EXAM1\obj\Debug\net6.0-windows\refint\EXAM1.dll
+C:\Users\Maria\source\repos\OOP_4sem\EXAM1\obj\Debug\net6.0-windows\EXAM1.pdb
+C:\Users\Maria\source\repos\OOP_4sem\EXAM1\obj\Debug\net6.0-windows\EXAM1.genruntimeconfig.cache
+C:\Users\Maria\source\repos\OOP_4sem\EXAM1\obj\Debug\net6.0-windows\ref\EXAM1.dll

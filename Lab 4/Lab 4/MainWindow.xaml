@@ -63,7 +63,7 @@
                     Foreground="White"
                     FontWeight="Medium"
                     FontSize="14"
-                    Content="{DynamicResource AddProduct}"
+                    Content="AddProduct"
                     Command="{Binding AddProduct}" Cursor="Hand"/>
             <Button Style="{StaticResource ButtonTheme}"
                     Content="{Binding Language}"

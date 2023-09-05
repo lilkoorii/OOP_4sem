@@ -1,0 +1,10 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Core",
+    "\\MVVM",
+    "\\MVVM\\ViewModel"
+  ],
+  "SelectedNode": "\\Core\\RelayCommand.cs",
+  "PreviewInSolutionExplorer": false
+}
